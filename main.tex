@@ -1,0 +1,66 @@
+\documentclass[
+	a4paper,
+	12pt, 
+	headheight=34pt,
+	parskip, % parskip absaetze ohne einrueken;  
+	bibliography=totoc, % Most class files don't automatically add the bibliography to the table of contents (Literaturverzeichnis)
+	index=totoc, % index=totoc Index im Inhaltsverzeichnis	 
+	listof=totoc, % listof=totoc Tabellen- und Abbildungsverzeichnis im Inhaltsverzeichnis
+	%draft, % zeigen, wo die übervolle Box aufgetreten ist
+	]{scrartcl} 
+	
+\usepackage[left=20mm,top=22mm,right=20mm,bottom=20mm]{geometry} % Seiten raender
+
+\usepackage[headsepline]{scrlayer-scrpage} % um Kopf- und Fußzeilen zu setzen; headsepline–aktiviert die Linie unter der Kopfzeile
+
+\usepackage{subfiles} %Unter Texdateien einbinde
+
+\usepackage{ucs} % charset
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc} %  LaTeX Fonts in westeuropäischer Codierung verlangt
+\usepackage[ngerman]{babel} % neue deutsche rechtschreibung
+
+\usepackage{amsmath,amssymb,amstext} % mathematische erweiterungen 
+
+\usepackage{float} % Für das genaue Platzieren von Grafiken und Tabellen mit der Option [H] dahinter.
+\usepackage{adjustbox} %% Tabellen an Seitenbreite anpassen
+\usepackage{colortbl} %Einfärben von Tabelle
+\usepackage{multirow}
+
+\usepackage{graphicx} % Um Bilder einzufuegen
+\graphicspath{ {./src/img/} } %Path relative to the main .tex file 
+
+\usepackage[colorlinks=true,urlcolor=blue,linkcolor=black,citecolor=black]{hyperref}  %% Links einfügen
+
+\input{tex/lib/custom_commands.tex} %Commands
+\input{tex/templates/title_page.tex}
+
+% Kopf und fusszeile
+\pagestyle{scrheadings} % Seitenstil scrheadings
+\clearpairofpagestyles % Seitenstil scrheadings
+
+%Konfigurierung der Kopfzeile
+\ihead{\today}	%Linke Kopfzeile
+\chead{\LaborName}	%Mitte Kopfzeile, ist aber in Preamble definiert, für gleichen Namen
+\ohead{\includegraphics[scale=2]{\logo}}	%Braucht keine Umgebung
+
+%Konfigurierung der Fußzeile
+\ifoot{\erstePerson}
+\ofoot{\pagemark}  %Nummerierung  der Seitenzahlen
+
+\begin{document}	
+	
+	\begin{noPageNumber}
+		\maketitle
+	\end{noPageNumber}
+	
+	\begin{noPageNumber}
+		\tableofcontents
+	\end{noPageNumber}
+
+	\subfile{tex/part_1.tex}
+	\subfile{tex/part_2.tex}
+	
+	\subfile{tex/templates/end_page.tex}
+	
+\end{document}

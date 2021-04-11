@@ -1,0 +1,72 @@
+	%\makePicture{Dateiname im Ordner Labor_Bilder}{Skallierung}{Unterschrift}{label für Verlnkung}
+	%Bsp
+	% \ref{Pic:label für Verlnkung} 
+	%\makePicture{test.png}{0.5}{Das Testbild}{2_Tstbld}
+	
+	\newcommand{\imgOne}[4]{
+		\begin{figure}[H]
+			\begin{center}
+				\includegraphics[scale=#2]{#1}
+			\end{center}
+			\caption{#3}
+			\label{Pic:#4}
+		\end{figure}
+	} 
+
+	\newcommand{\imgTow}[6]{
+		\begin{figure}[H]
+			\begin{center}
+				\includegraphics[scale=#2]{#1}
+				\includegraphics[scale=#4]{#3}
+			\end{center}
+			\caption{#5}
+			\label{Pic:#6}
+		\end{figure}
+	}
+
+	\newcommand{\imgThree}[8]{
+		\begin{figure}[H]
+			\begin{center}
+				\includegraphics[scale=#2]{#1}
+				\includegraphics[scale=#4]{#3}
+				\includegraphics[scale=#6]{#5}
+			\end{center}
+			\caption{#7}
+			\label{Pic:#8}
+		\end{figure}
+	}
+
+	\newcommand{\imgFour}[9]{
+		\begin{figure}[H]
+			\begin{center}
+				\includegraphics[scale=#2]{#1}
+				\includegraphics[scale=#4]{#3}
+				\includegraphics[scale=#6]{#5}
+				\includegraphics[scale=#6]{#7}
+			\end{center}
+			\caption{#8}
+			\label{Pic:#9}
+		\end{figure}
+	}
+	
+	\newcommand{\red}[1]{
+		\color{red}#1\color{black}
+	} 
+
+	\newcommand{\degre}[0]{	
+		^{\circ}
+	}
+
+	\newcounter{noPageNumber}
+	\newenvironment{noPageNumber}
+	{\clearpage\stepcounter{noPageNumber}%
+		\renewcommand{\thepage}{.\arabic{noPageNumber}}%
+		\ofoot{}}  %Nummerierung  der Seitenzahlen nicht anzeigen | %\thispagestyle{empty} for plaine page
+	{\clearpage\addtocounter{page}{-1}}
+	
+	
+	% --- Farbdefinitionen ----------------------------------------
+	\definecolor{darkgray}{rgb}{0.8,0.8,0.8}
+	\definecolor{lightgray}{rgb}{0.95,0.95,0.95}
+	%\definecolor{stronGreen}{rgb}{0,139,0}
+	
