@@ -2,9 +2,9 @@
 %% How To Use %%
 %%%%%%%%%%%%%%%%
 % 1. In main.tex -> Document style -> "Choose your template" section replace defalut closing page
-% 	 \input{tex/templates/closingPage.tex}     % Sub file provieds closing page template
+%     \input{tex/templates/closingPage.tex}     % Sub file provieds closing page template
 % 2. In main.tex -> "Document content" use \closingPage to create the coling page  
-%    \closingPage 	       % Create closing page
+%    \closingPage            % Create closing page
 
 
 %%%%%%%%%%%%%%
@@ -14,35 +14,35 @@
 % - \definecolor{lightgray}{rgb}{0.95,0.95,0.95}
 
 % Packages:
-% - \usepackage{float}          % Placing graphics and tables with the [H] option 
-% - \usepackage{adjustbox}		% Fit tables to page width
-% - \usepackage{colortbl} 	    % Colorize tables
+% - \usepackage{float}                              % Placing graphics and tables with the [H] option 
+% - \usepackage{adjustbox}                          % Fit tables to page width
+% - \usepackage{colortbl}                           % Colorize tables
 
 
 %%%%%%%%%%%%%%%%%%
 %% Closing Page %%
 %%%%%%%%%%%%%%%%%%
-\newcommand{\closingPage}{      					% New command to create the coling page in the main.tex
-	\newpage										% Start on a new page
-	
-	\section{Geräteliste}							% Make a new section
-	\textmd{Die Simulation wurden mit den aufgeführten Geräten durchgeführt:}
-	\begin{table}[H] 		    					% create and place table environment 
-        \centering									% align center 
-        \begin{adjustbox}{max width=\textwidth} 	% Adjusts the table to the maximum width 
-            \def\arraystretch{1.5}		    	    % Distance between text and table  
-            \begin{tabular}{|p{6cm}|l|}				% Create and place table
-                \hline\rowcolor{lightgray}			% Change first row colour 	
+\newcommand{\closingPage}{                          % New command to create the coling page in the main.tex
+    \newpage                                        % Start on a new page
+    
+    \section{Geräteliste}                           % Make a new section
+    \textmd{Die Simulation wurden mit den aufgeführten Geräten durchgeführt:}
+    \begin{table}[H]                                % create and place table environment 
+        \centering                                  % align center 
+        \begin{adjustbox}{max width=\textwidth}     % Adjusts the table to the maximum width 
+            \def\arraystretch{1.5}                  % Distance between text and table  
+            \begin{tabular}{|p{6cm}|l|}             % Create and place table
+                \hline\rowcolor{lightgray}          % Change first row colour     
                 Bezeichnung     & Gerätenummer \\ \hline
-                             	& 			   \\ \hline
-                               	& 			   \\ \hline
+                                &              \\ \hline
+                                &              \\ \hline
             \end{tabular}
         \end{adjustbox}
-        \caption{Messgeräte}  						% Make caption 
-        \label{tab:Messgeräte} 					    % Label to reference table
+        \caption{Messgeräte}                        % Make caption 
+        \label{tab:Messgeräte}                      % Label to reference table
     \end{table}
-	
-	\section{Quellenverzeichnis} 					% Make a new section
-	\listoffigures                                  % List of figures
-	\listoftables                                   % List of tables
+
+    \section{Quellenverzeichnis}                    % Make a new section
+    \listoffigures                                  % List of figures
+    \listoftables                                   % List of tables
 }

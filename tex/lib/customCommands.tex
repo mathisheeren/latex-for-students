@@ -3,7 +3,6 @@
 %%%%%%%%%%%%%%
 % Definitions:  
 
-
 % Packages:
 % - \usepackage{float}          % Placing graphics and tables with the [H] option 
 
@@ -22,47 +21,47 @@
 } 
 
 % create a gradcelsius sign 
-\newcommand{\degre}{	
+\newcommand{\degre}{    
     ^{\circ}
 }
 
 % \imgOne{File name in the folder src/img/}{Scaling}{Signature}{Label}
 % Eg: \imgOne{test.png}{0.5}{The Test figure}{Tstfig}
 \newcommand{\imgOne}[4]{
-	\begin{figure}[H]
-		\begin{center}
-			\includegraphics[scale=#2]{#1}
-		\end{center}
-		\caption{#3}
-		\label{Pic:#4}
-	\end{figure}
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[scale=#2]{#1}
+        \end{center}
+        \caption{#3}
+        \label{Pic:#4}
+    \end{figure}
 } 
 
 % \imgTow{FileOne}{Scaling}{FileTow}{Scaling}{Signature}{Label}
 % Eg: \imgTow{test1.png}{0.5}{test2.png}{0.5}{The Test figure}{Tstfig}
 \newcommand{\imgTow}[6]{
-	\begin{figure}[H]
-		\begin{center}
-			\includegraphics[scale=#2]{#1}
-			\includegraphics[scale=#4]{#3}
-		\end{center}
-		\caption{#5}
-		\label{Pic:#6}
-	\end{figure}
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[scale=#2]{#1}
+            \includegraphics[scale=#4]{#3}
+        \end{center}
+        \caption{#5}
+        \label{Pic:#6}
+    \end{figure}
 }
 
 % \imgThree{FileOne}{Scaling}{FileTow}{Scaling}{FileThree}{Scaling}{Signature}{Label}
 % Eg: \imgThree{test1.png}{0.5}{test2.png}{0.5}{test3.png}{0.5}{The Test figure}{Tstfig}
 \newcommand{\imgThree}[8]{
-	\begin{figure}[H]
-		\begin{center}
-			\includegraphics[scale=#2]{#1}
-			\includegraphics[scale=#4]{#3}
-			\includegraphics[scale=#6]{#5}
-		\end{center}
-		\caption{#7}
-		\label{Pic:#8}
-	\end{figure}
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[scale=#2]{#1}
+            \includegraphics[scale=#4]{#3}
+            \includegraphics[scale=#6]{#5}
+        \end{center}
+        \caption{#7}
+        \label{Pic:#8}
+    \end{figure}
 }
 
 % \imgThree{FileOne}{Scaling}{FileTow}{Scaling}{FileThree}{Scaling}{FileFour}{Scaling}{Signature}{Label}
@@ -80,16 +79,16 @@
     \imgFourContinued
 }
 \newcommand{\imgFourContinued}[1]{
-	\begin{figure}[H]
-		\begin{center}
-			\includegraphics[scale=\tempb]{\tempa}
-			\includegraphics[scale=\tempd]{\tempc}
-			\includegraphics[scale=\tempf]{\tempe}
-			\includegraphics[scale=\temph]{\tempg}
-		\end{center}
-		\caption{\tempi}
-		\label{Pic:#1}
-	\end{figure}
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[scale=\tempb]{\tempa}
+            \includegraphics[scale=\tempd]{\tempc}
+            \includegraphics[scale=\tempf]{\tempe}
+            \includegraphics[scale=\temph]{\tempg}
+        \end{center}
+        \caption{\tempi}
+        \label{Pic:#1}
+    \end{figure}
 }
 
 % Environment for whose content no page numbering is created
@@ -97,8 +96,8 @@
 \newcounter{noPageNumber}
 \newenvironment{noPageNumber}
 {\clearpage\stepcounter{noPageNumber}%
-	\renewcommand{\thepage}{.\arabic{noPageNumber}}%
-	\ofoot{}}  % Do not show page numbering | %\thispagestyle{empty} for plaine page
+    \renewcommand{\thepage}{.\arabic{noPageNumber}}%
+    \ofoot{}}  % Do not show page numbering | %\thispagestyle{empty} for plaine page
 {\clearpage\addtocounter{page}{-1}}
 
 
