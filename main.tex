@@ -1,66 +1,73 @@
 \documentclass[
-	a4paper,
-	12pt, 
-	headheight=34pt,
-	parskip, % parskip absaetze ohne einrueken;  
-	bibliography=totoc, % Most class files don't automatically add the bibliography to the table of contents (Literaturverzeichnis)
-	index=totoc, % index=totoc Index im Inhaltsverzeichnis	 
-	listof=totoc, % listof=totoc Tabellen- und Abbildungsverzeichnis im Inhaltsverzeichnis
-	%draft, % zeigen, wo die übervolle Box aufgetreten ist
-	]{scrartcl} 
+	a4paper, 			% Paper sizes DIN A4
+	12pt,				% Font size
+	headheight=34pt,	% Padding top 
+	parskip, 			% Paragraphs without indent  
+	bibliography=totoc, % Add the bibliography to the table of contents (Literaturverzeichnis)
+	index=totoc,   		% Add the Index to the table of contents (Inhaltsverzeichnis)	 
+ 	listof=totoc,  		% Add the list of tables and the list of figures to the table of contents (Tabellen- und Abbildungsverzeichnis)
+	%draft, 			% Show where the overfull box occurred
+	]{scrartcl} 		% Koma-Script article class
 	
-\usepackage[left=20mm,top=22mm,right=20mm,bottom=20mm]{geometry} % Seiten raender
+\usepackage[left=20mm,top=22mm,right=20mm,bottom=20mm]{geometry} % Side frame
 
-\usepackage[headsepline]{scrlayer-scrpage} % um Kopf- und Fußzeilen zu setzen; headsepline–aktiviert die Linie unter der Kopfzeile
+\usepackage[headsepline]{scrlayer-scrpage} % Set headers and footers
+										   % - "headsepline" activates the line under the header
+\usepackage{subfiles} 					   % Include sub text files
 
-\usepackage{subfiles} %Unter Texdateien einbinde
-
-\usepackage{ucs} % charset
+% Font and characters
+\usepackage{ucs} 						   % Charset
 \usepackage[utf8x]{inputenc}
-\usepackage[T1]{fontenc} %  LaTeX Fonts in westeuropäischer Codierung verlangt
-\usepackage[ngerman]{babel} % neue deutsche rechtschreibung
+\usepackage[T1]{fontenc} 				   % LaTeX Fonts required in Western European coding
+\usepackage[ngerman]{babel}				   % New german spelling
 
-\usepackage{amsmath,amssymb,amstext} % mathematische erweiterungen 
+\usepackage{amsmath,amssymb,amstext}       %  Mathematical extensions 
 
-\usepackage{float} % Für das genaue Platzieren von Grafiken und Tabellen mit der Option [H] dahinter.
-\usepackage{adjustbox} %% Tabellen an Seitenbreite anpassen
-\usepackage{colortbl} %Einfärben von Tabelle
-\usepackage{multirow}
+% Table and figure formatting
+\usepackage{float} 						   % Placing graphics and tables with the [H] option 
+\usepackage{adjustbox} 					   % Fit tables to page width
+\usepackage{colortbl} 					   % Colorize tables
+\usepackage{multirow} 					   % Connect rows in a table
+\usepackage{graphicx} 					   % To insert graphics
+\graphicspath{ {./src/img/} } 			   % Graphix path relative to the main .tex file 
 
-\usepackage{graphicx} % Um Bilder einzufuegen
-\graphicspath{ {./src/img/} } %Path relative to the main .tex file 
+\usepackage[
+	colorlinks=true,					   % Customise link colours
+	urlcolor=blue,						   % Urls colored blue	
+	linkcolor=black,					   % Internal links colored black
+	citecolor=black,					   % Cites colored black			
+	]{hyperref}  						   % Use links in the document
 
-\usepackage[colorlinks=true,urlcolor=blue,linkcolor=black,citecolor=black]{hyperref}  %% Links einfügen
+\input{tex/lib/custom_commands.tex} 	   % Sub file provieds custom commands
+\input{tex/templates/title_page.tex}	   % Sub file provieds title page template 
 
-\input{tex/lib/custom_commands.tex} %Commands
-\input{tex/templates/title_page.tex}
+% Headers and footers
+\pagestyle{scrheadings} 				   % Page style scrheadings
+\clearpairofpagestyles                     % Clear headers and footers
 
-% Kopf und fusszeile
-\pagestyle{scrheadings} % Seitenstil scrheadings
-\clearpairofpagestyles % Seitenstil scrheadings
+% Header configuration
+\ihead{\today}							   % Left header, current date
+\chead{\LaborName}	 					   % Center header, places main title
+\ohead{\includegraphics[scale=2]{\logo}}   % Right header, includes the logo 
 
-%Konfigurierung der Kopfzeile
-\ihead{\today}	%Linke Kopfzeile
-\chead{\LaborName}	%Mitte Kopfzeile, ist aber in Preamble definiert, für gleichen Namen
-\ohead{\includegraphics[scale=2]{\logo}}	%Braucht keine Umgebung
-
-%Konfigurierung der Fußzeile
-\ifoot{\erstePerson}
-\ofoot{\pagemark}  %Nummerierung  der Seitenzahlen
+% Footer configuration
+\ifoot{\erstePerson}          			   % Left footer, auther
+%\cfoot{} 								   % Center footer, not used
+\ofoot{\pagemark}  						   % Right footer, Page numbering 
 
 \begin{document}	
 	
-	\begin{noPageNumber}
-		\maketitle
+	\begin{noPageNumber}				   % Give title page no page number
+		\maketitle						   % Create title page
 	\end{noPageNumber}
 	
-	\begin{noPageNumber}
-		\tableofcontents
+	\begin{noPageNumber}				   % Give table of contents page no page number
+		\tableofcontents				   % Create table of contents
 	\end{noPageNumber}
 
-	\subfile{tex/part_1.tex}
-	\subfile{tex/part_2.tex}
+	\subfile{tex/part_1.tex}			   % Include sub file (optinal)
+	\subfile{tex/part_2.tex}			   % Include sub file (optinal)
 	
-	\subfile{tex/templates/end_page.tex}
+	\subfile{tex/templates/end_page.tex}   % Sub file provieds end page template 
 	
 \end{document}
