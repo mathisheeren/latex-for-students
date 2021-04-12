@@ -40,13 +40,17 @@
 
 \input{tex/lib/customCommands.tex} 	   % Sub file provieds custom commands
 
+
 %%%%%%%%%%%%%%%%%%%%
 %% Document style %%
 %%%%%%%%%%%%%%%%%%%%
-
-% Choose your template
-\input{tex/templates/titlePage.tex}	   % Sub file provieds title page template 
+%% Choose your template %%
+\input{tex/templates/titlePage.tex}	      % Sub file provieds title page template 
 \input{tex/templates/closingPage.tex}     % Sub file provieds closing page template 
+
+%% Definitions %%
+\newcommand{\Versuch}{XYZ 1} 
+\newcommand{\LinkAufgabe}{https://some/link/to/view.php?id=81238234}
 
 % Headers and footers
 \pagestyle{scrheadings} 				   % Page style scrheadings
@@ -54,31 +58,31 @@
 
 % Header configuration
 \ihead{\today}							   % Left header, current date
-\chead{\LaborName}	 					   % Center header, places main title
+\chead{\mainTitle}	 					   % Center header, places main title
 \ohead{\includegraphics[scale=2]{\logo}}   % Right header, includes the logo 
 
 % Footer configuration
-\ifoot{\erstePerson}          			   % Left footer, auther
+\ifoot{\name}                			   % Left footer, auther
 %\cfoot{} 								   % Center footer, not used
 \ofoot{\pagemark}  						   % Right footer, Page numbering 
+
 
 %%%%%%%%%%%%%%%%%%%%%%
 %% Document content %%
 %%%%%%%%%%%%%%%%%%%%%%
-
 \begin{document}	
 	
 	\begin{noPageNumber}				   % Give title page no page number
 		\titlePage						   % Create title page
 	\end{noPageNumber}
 	
-	\begin{noPageNumber}				   % Give table of contents page no page number
-		\tableofcontents				   % Create table of contents
-	\end{noPageNumber}
+%	\begin{noPageNumber}				   % Give table of contents page no page number
+%		\tableofcontents				   % Create table of contents
+%	\end{noPageNumber}
 
-	\subfile{tex/part1.tex}			   % Include sub file (optinal)
-	\subfile{tex/part2.tex}			   % Include sub file (optinal)
-	
+%	\subfile{tex/part1.tex}			   % Include sub file (optinal)
+%	\subfile{tex/part2.tex}			   % Include sub file (optinal)
+%	
 	\closingPage 						   % Create closing page
 	
 \end{document}
