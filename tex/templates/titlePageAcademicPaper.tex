@@ -8,6 +8,7 @@
 % 3. In main.tex -> "Document content" use \titlePage to create the title page  
 %    \titlePage                            % Create title page
 
+
 %%%%%%%%%%%%%%
 %% Requires %%
 %%%%%%%%%%%%%%
@@ -22,9 +23,9 @@
 \newcommand{\logo}{logo}                   % Your logo path
 
 % Packages:
-% - \usepackage{float}                    % Placing graphics and tables with the [H] option 
-% - \usepackage{adjustbox}                % Fit tables to page width
-% - \usepackage{graphicx}                 % To insert graphics
+% - \usepackage{float}                     % Placing graphics and tables with the [H] option 
+% - \usepackage{adjustbox}                 % Fit tables to page width
+% - \usepackage{graphicx}                  % To insert graphics
 
 
 %%%%%%%%%%%%%%%%
@@ -34,8 +35,8 @@
     \begin{titlepage}
         \begin{table}[H]
             \centering
-            \resizebox{\textwidth}{!}{    % Adjusts the table to the maximum width 
-                \def\arraystretch{1.2}    % Distance between text and cells
+            \resizebox{\textwidth}{!}{     % Adjusts the table to the maximum width 
+                \def\arraystretch{1.2}     % Distance between text and cells
                 \begin{tabular}{|c|c|c|}
                     \hline
                     \multicolumn{2}{|l}{\multirow{3}{*}{\textbf{\mainTitle}}} & \multicolumn{1}{r|}{\multirow{3}{*}{\includegraphics[scale=2]{\logo}}}\\

@@ -1,0 +1,66 @@
+%%%%%%%%%%%%%%%%
+%% How To Use %%
+%%%%%%%%%%%%%%%%
+% 1. In main.tex -> Document style -> "Choose your template" section replace defalut title page
+%    \input{tex/templates/titlePageReport.tex}% Sub file provieds title page template 
+% 2. (Optional) Move the Definitions titlePageReport.tex -> Requires -> Definitions 
+%    to main.tex -> Document style -> "Definitions" section.    
+% 3. In main.tex -> "Document content" use \titlePage to create the title page  
+%    \titlePage                            % Create title page
+
+
+%%%%%%%%%%%%%%
+%% Requires %%
+%%%%%%%%%%%%%%
+% Definitions:
+\newcommand{\laborName}{}
+\newcommand{\jahrgang}{}
+\newcommand{\laborTag}{\today}
+\newcommand{\prof}{Prof. Dr. }% Professor
+\newcommand{\versuch}{}
+\newcommand{\versuchTitel}{}
+\newcommand{\erstePerson}{}
+\newcommand{\ersteMatNr}{}
+\newcommand{\zweitePerson}{}
+\newcommand{\zweiteMatNr}{}
+\newcommand{\drittePerson}{}
+\newcommand{\dritteMatNr}{}
+\newcommand{\logo}{logo}                   % Your logo path
+
+% Packages:
+% - \usepackage{float}                     % Placing graphics and tables with the [H] option 
+% - \usepackage{adjustbox}                 % Fit tables to page width
+% - \usepackage{graphicx}                  % To insert graphics
+
+
+%%%%%%%%%%%%%%%%
+%% Title Page %%
+%%%%%%%%%%%%%%%%
+\newcommand{\name}{\erstePerson$ ~ $| \zweitePerson$ ~ $| \drittePerson} % Exercise participants in the footer
+\newcommand{\mainTitle}{\laborName}        % set lab. name to Header caption
+ 
+\newcommand{\titlePage}{
+    \begin{titlepage}
+        \begin{table}[H]
+            \centering
+            \resizebox{\textwidth}{!}{     % Adjusts the table to the maximum width 
+                \def\arraystretch{1.2}     % Distance between text and cells
+                \begin{tabular}{|c|c|c|}
+                    \hline
+                    \multicolumn{2}{|l}{\multirow{3}{*}{\textbf{\laborName}}} & \multicolumn{1}{r|}{\multirow{3}{*}{\includegraphics[scale=1.5]{\logo}}} \\
+                    \multicolumn{3}{|l|}{} \\ 
+                    \multicolumn{3}{|l|}{} \\ \hline
+                    \textbf{Studiengruppe:}                                   & \multirow{7}{*}{\huge\textbf{\versuch}} & \textbf{Protokollführer:} \\ 
+                    \textmd{\jahrgang}     				                      &                                  		& \textmd{\erstePerson} \\ \cline{1-1}  
+                    \textbf{Übungstag:}                                       &                                         & \textmd{Matrikel-Nr.\ersteMatNr} \\ 										  
+                    \textmd{\laborTag}                                        &              		                    & \zweitePerson \\ \cline{1-1}
+                    \textbf{Professor:}             				          &                                         & \textmd{Matrikel-Nr. \zweiteMatNr} \\  	 
+                    \multirow{2}{*}{\prof}                                    &                                         &  \drittePerson \\ 
+                                                                              &                                         & \textmd{Matrikel-Nr. \dritteMatNr}\\ \hline
+                    \multicolumn{3}{|c|}{\multirow{2}{*}{\textbf{\versuchTitel}}}\\
+                    \multicolumn{3}{|c|}{}\\ \hline
+                \end{tabular}
+            }
+        \end{table}
+    \end{titlepage}    
+}
