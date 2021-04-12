@@ -1,86 +1,86 @@
 \documentclass[
-	a4paper, 			% Paper sizes DIN A4
-	12pt,				% Font size
-	headheight=34pt,	% Padding top 
-	parskip, 			% Paragraphs without indent  
-	bibliography=totoc, % Add the bibliography to the table of contents (Literaturverzeichnis)
-	index=totoc,   		% Add the Index to the table of contents (Inhaltsverzeichnis)	 
- 	listof=totoc,  		% Add the list of tables and the list of figures to the table of contents (Tabellen- und Abbildungsverzeichnis)
-	%draft, 			% Show where the overfull box occurred
-	]{scrartcl} 		% Koma-Script article class
-	
+    a4paper,             % Paper sizes DIN A4
+    12pt,                % Font size
+    headheight=34pt,     % Padding top 
+    parskip,             % Paragraphs without indent  
+    bibliography=totoc,  % Add the bibliography to the table of contents (Literaturverzeichnis)
+    index=totoc,         % Add the Index to the table of contents (Inhaltsverzeichnis)     
+     listof=totoc,       % Add the list of tables and the list of figures to the table of contents (Tabellen- und Abbildungsverzeichnis)
+    %draft,              % Show where the overfull box occurred
+    ]{scrartcl}          % Koma-Script article class
+    
 \usepackage[left=20mm,top=22mm,right=20mm,bottom=20mm]{geometry} % Side frame
 
 \usepackage[headsepline]{scrlayer-scrpage} % Set headers and footers
-										   % - "headsepline" activates the line under the header
-\usepackage{subfiles} 					   % Include sub text files
+                                           % - "headsepline" activates the line under the header
+\usepackage{subfiles}                      % Include sub text files
 
 % Font and characters
-\usepackage{ucs} 						   % Charset
+\usepackage{ucs}                           % Charset
 \usepackage[utf8x]{inputenc}
-\usepackage[T1]{fontenc} 				   % LaTeX Fonts required in Western European coding
-\usepackage[ngerman]{babel}				   % New german spelling
+\usepackage[T1]{fontenc}                   % LaTeX Fonts required in Western European coding
+\usepackage[ngerman]{babel}                % New german spelling
 
 \usepackage{amsmath,amssymb,amstext}       %  Mathematical extensions 
 
 % Table and figure formatting
-\usepackage{float} 						   % Placing graphics and tables with the [H] option 
-\usepackage{adjustbox} 					   % Fit tables to page width
-\usepackage{colortbl} 					   % Colorize tables
-\usepackage{multirow} 					   % Connect rows in a table
-\usepackage{graphicx} 					   % To insert graphics
-\graphicspath{ {./src/img/} } 			   % Graphix path relative to the main .tex file 
+\usepackage{float}                         % Placing graphics and tables with the [H] option 
+\usepackage{adjustbox}                     % Fit tables to page width
+\usepackage{colortbl}                      % Colorize tables
+\usepackage{multirow}                      % Connect rows in a table
+\usepackage{graphicx}                      % To insert graphics
+\graphicspath{ {./src/img/} }              % Graphix path relative to the main .tex file 
 
 \usepackage[
-	colorlinks=true,					   % Customise link colours
-	urlcolor=blue,						   % Urls colored blue	
-	linkcolor=black,					   % Internal links colored black
-	citecolor=black,					   % Cites colored black			
-	]{hyperref}  						   % Use links in the document
+    colorlinks=true,                       % Customise link colours
+    urlcolor=blue,                         % Urls colored blue    
+    linkcolor=black,                       % Internal links colored black
+    citecolor=black,                       % Cites colored black            
+    ]{hyperref}                            % Use links in the document
 
-\input{tex/lib/customCommands.tex} 	   	   % Sub file provieds custom commands
+\input{tex/lib/customCommands.tex}         % Sub file provieds custom commands
 
 
 %%%%%%%%%%%%%%%%%%%%
 %% Document style %%
 %%%%%%%%%%%%%%%%%%%%
 %% Choose your template %%
-\input{tex/templates/titlePageAcademicPaper.tex}	      % Sub file provieds title page template 
-\input{tex/templates/closingPage.tex}     % Sub file provieds closing page template 
+\input{tex/templates/titlePageAcademicPaper.tex} % Sub file provieds title page template 
+\input{tex/templates/closingPage.tex}      % Sub file provieds closing page template 
 
 %% Definitions %%
 
 % Headers and footers
-\pagestyle{scrheadings} 				   % Page style scrheadings
+\pagestyle{scrheadings}                    % Page style scrheadings
 \clearpairofpagestyles                     % Clear headers and footers
 
 % Header configuration
-\ihead{\today}							   % Left header, current date
-\chead{\mainTitle}	 					   % Center header, places main title
+\ihead{\today}                             % Left header, current date
+\chead{\mainTitle}                         % Center header, places main title
 \ohead{\includegraphics[scale=2]{\logo}}   % Right header, includes the logo 
 
 % Footer configuration
-\ifoot{\name}                			   % Left footer, auther
-%\cfoot{} 								   % Center footer, not used
-\ofoot{\pagemark}  						   % Right footer, Page numbering 
+\ifoot{\name}                               % Left footer, auther
+%\cfoot{}                                   % Center footer, not used
+\ofoot{\pagemark}                           % Right footer, Page numbering 
 
 
 %%%%%%%%%%%%%%%%%%%%%%
 %% Document content %%
 %%%%%%%%%%%%%%%%%%%%%%
-\begin{document}	
-	
-	\begin{noPageNumber}				   % Give title page no page number
-		\titlePage						   % Create title page
-	\end{noPageNumber}
-	
-	\begin{noPageNumber}				   % Give table of contents page no page number
-		\tableofcontents				   % Create table of contents
-	\end{noPageNumber}
+\begin{document}    
     
-	\subfile{tex/part1.tex}			       % Include sub file (optinal)
-	\subfile{tex/part2.tex}			       % Include sub file (optinal)
-	
-	\closingPage 						   % Create closing page
-	
+    \begin{noPageNumber}                   % Give title page no page number
+        \titlePage                         % Create title page
+    \end{noPageNumber}
+    
+    \begin{noPageNumber}                   % Give table of contents page no page number
+        \tableofcontents                   % Create table of contents
+    \end{noPageNumber}
+    
+    \subfile{tex/part1.tex}                % Include sub file (optinal)
+    \subfile{tex/part2.tex}                % Include sub file (optinal)
+    
+    \closingPage                           % Create closing page
+    
 \end{document}
