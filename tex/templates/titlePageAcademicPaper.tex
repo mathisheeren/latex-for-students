@@ -1,0 +1,56 @@
+%%%%%%%%%%%%%%%%
+%% How To Use %%
+%%%%%%%%%%%%%%%%
+% 1. In main.tex -> Document style -> "Choose your template" section replace defalut title page
+% 	 \input{tex/templates/titlePageAcademicPaper.tex}% Sub file provieds title page template 
+% 2. (Optional) Move the Definitions titlePageAcademicPaper.tex -> Requires -> Definitions 
+%    to main.tex -> Document style -> "Definitions" section.    
+% 3. In main.tex -> "Document content" use \titlePage to create the title page  
+%    \titlePage						    % Create title page
+
+%%%%%%%%%%%%%%
+%% Requires %%
+%%%%%%%%%%%%%%
+% Definitions:
+\newcommand{\name}{Muster, Max} 		% Your name
+\newcommand{\MatNr}{2309677}    		% Your registration number
+\newcommand{\mainTitle}{Lorem ipsum 3}  % Head title
+\newcommand{\class}{E4}					% Your class
+\newcommand{\deadline}{\today}			% Deadline
+\newcommand{\prof}{Prof. Dr. Hans Mueller} % Professor
+\newcommand{\subTitle}{Lorem ipsum dolor sit amet, consetetur sadipscing elitr.} % Sub title
+\newcommand{\logo}{logo}				% Your logo path
+
+% Packages:
+% - \usepackage{float}          		% Placing graphics and tables with the [H] option 
+% - \usepackage{adjustbox}				% Fit tables to page width
+% - \usepackage{graphicx} 	    		% To insert graphics
+
+
+%%%%%%%%%%%%%%%%
+%% Title Page %%
+%%%%%%%%%%%%%%%%
+\newcommand{\titlePage}{
+	\begin{titlepage}
+		\begin{table}[H]
+			\centering
+            \resizebox{\textwidth}{!}{  % Adjusts the table to the maximum width 
+                \def\arraystretch{1.2} 	% Distance between text and cells
+                \begin{tabular}{|c|c|c|}
+				    \hline
+      				\multicolumn{2}{|l}{\multirow{3}{*}{\textbf{\mainTitle}}} & \multicolumn{1}{r|}{\multirow{3}{*}{\includegraphics[scale=2]{\logo}}}\\
+      				\multicolumn{3}{|l|}{}\\ 
+      				\multicolumn{3}{|l|}{}\\ \hline
+      				\textmd{Studiengruppe:}                                   & \multicolumn{2}{c|}{\multirow{5}{*}{\huge\textbf{\name}}}  \\
+      				\textbf{\class}    										  & \multicolumn{2}{c|}{} \\ \cline{1-1}                           		         											  
+      				\textmd{Abgabetag:}                                       & \multicolumn{2}{c|}{} \\ 
+      				\textbf{\deadline}                 						  & \multicolumn{2}{c|}{} \\ \cline{1-1}
+      				\textmd{Professor:}                                 	  & \multicolumn{2}{c|}{\textbf{Matrikel-Nr. \MatNr}} \\         
+      				\textbf{\prof}         								      & \multicolumn{2}{c|}{} \\ \hline
+      				\multicolumn{3}{|c|}{\multirow{2}{*}{\textbf{\subTitle}}}\\
+      				\multicolumn{3}{|c|}{}\\ \hline
+      			\end{tabular}
+            }
+		\end{table}
+	\end{titlepage}	
+}
