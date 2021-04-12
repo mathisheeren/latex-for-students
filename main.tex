@@ -38,19 +38,17 @@
 	citecolor=black,					   % Cites colored black			
 	]{hyperref}  						   % Use links in the document
 
-\input{tex/lib/customCommands.tex} 	   % Sub file provieds custom commands
+\input{tex/lib/customCommands.tex} 	   	   % Sub file provieds custom commands
 
 
 %%%%%%%%%%%%%%%%%%%%
 %% Document style %%
 %%%%%%%%%%%%%%%%%%%%
 %% Choose your template %%
-\input{tex/templates/titlePage.tex}	      % Sub file provieds title page template 
+\input{tex/templates/titlePageAcademicPaper.tex}	      % Sub file provieds title page template 
 \input{tex/templates/closingPage.tex}     % Sub file provieds closing page template 
 
 %% Definitions %%
-\newcommand{\Versuch}{XYZ 1} 
-\newcommand{\LinkAufgabe}{https://some/link/to/view.php?id=81238234}
 
 % Headers and footers
 \pagestyle{scrheadings} 				   % Page style scrheadings
@@ -76,13 +74,13 @@
 		\titlePage						   % Create title page
 	\end{noPageNumber}
 	
-%	\begin{noPageNumber}				   % Give table of contents page no page number
-%		\tableofcontents				   % Create table of contents
-%	\end{noPageNumber}
+	\begin{noPageNumber}				   % Give table of contents page no page number
+		\tableofcontents				   % Create table of contents
+	\end{noPageNumber}
 
-%	\subfile{tex/part1.tex}			   % Include sub file (optinal)
-%	\subfile{tex/part2.tex}			   % Include sub file (optinal)
-%	
+	\subfile{tex/part1.tex}			       % Include sub file (optinal)
+	\subfile{tex/part2.tex}			       % Include sub file (optinal)
+	
 	\closingPage 						   % Create closing page
 	
 \end{document}
