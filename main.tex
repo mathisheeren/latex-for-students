@@ -38,8 +38,15 @@
 	citecolor=black,					   % Cites colored black			
 	]{hyperref}  						   % Use links in the document
 
-\input{tex/lib/custom_commands.tex} 	   % Sub file provieds custom commands
-\input{tex/templates/title_page.tex}	   % Sub file provieds title page template 
+\input{tex/lib/customCommands.tex} 	   % Sub file provieds custom commands
+
+%%%%%%%%%%%%%%%%%%%%
+%% Document style %%
+%%%%%%%%%%%%%%%%%%%%
+
+% Choose your template
+\input{tex/templates/titlePage.tex}	   % Sub file provieds title page template 
+\input{tex/templates/closingPage.tex}     % Sub file provieds closing page template 
 
 % Headers and footers
 \pagestyle{scrheadings} 				   % Page style scrheadings
@@ -55,19 +62,23 @@
 %\cfoot{} 								   % Center footer, not used
 \ofoot{\pagemark}  						   % Right footer, Page numbering 
 
+%%%%%%%%%%%%%%%%%%%%%%
+%% Document content %%
+%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{document}	
 	
 	\begin{noPageNumber}				   % Give title page no page number
-		\maketitle						   % Create title page
+		\titlePage						   % Create title page
 	\end{noPageNumber}
 	
 	\begin{noPageNumber}				   % Give table of contents page no page number
 		\tableofcontents				   % Create table of contents
 	\end{noPageNumber}
 
-	\subfile{tex/part_1.tex}			   % Include sub file (optinal)
-	\subfile{tex/part_2.tex}			   % Include sub file (optinal)
+	\subfile{tex/part1.tex}			   % Include sub file (optinal)
+	\subfile{tex/part2.tex}			   % Include sub file (optinal)
 	
-	\subfile{tex/templates/end_page.tex}   % Sub file provieds end page template 
+	\closingPage 						   % Create closing page
 	
 \end{document}

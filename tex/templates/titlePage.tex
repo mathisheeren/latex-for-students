@@ -1,0 +1,42 @@
+\newcommand{\titlePage}{
+	\begin{titlepage}
+			\begin{table}[H]
+			\centering
+			\begin{adjustbox}{max width=\textwidth} % Passt die Tabelle an die maximale Breite an 
+				\bgroup\def\arraystretch{1.2} % Abstand zwischen Text und Tabelle  
+					\begin{tabular}{|c|c|c|}
+					\hline
+					\multicolumn{2}{|l}{\multirow{3}{*}{\textbf{\LaborName}}} & \multicolumn{1}{r|}{\multirow{3}{*}{\includegraphics[scale=2]{\logo}}}\\
+					\multicolumn{3}{|l|}{}\\ 
+					\multicolumn{3}{|l|}{}\\ \hline
+					\textmd{Studiengruppe:}                                   & \multicolumn{2}{c|}{\multirow{5}{*}{\huge\textbf{\erstePerson}}}  \\
+					\multicolumn{1}{|c|}{\multirow{1}{*}{\textbf{\Jahrgang}}} & \multicolumn{2}{c|}{} \\     \cline{1-1}                           		         											  
+					\textmd{Abgabetag:}                                       & \multicolumn{2}{c|}{} \\ 
+					\multicolumn{1}{|c|}{\textbf{\LaborTag}}                  & \multicolumn{2}{c|}{} \\\cline{1-1}
+					\textmd{Professor:}\                                                  			   & \multicolumn{2}{c|}{\textbf{Matrikel-Nr. \ersteMatNr}} \\         
+					\multicolumn{1}{|c|}{\multirow{2}{*}{\prof}}                     				   & \multicolumn{2}{c|}{} \\   
+					& \multicolumn{2}{c|}{} \\ \hline
+					\multicolumn{3}{|c|}{\multirow{2}{*}{\textbf{\HauptTitel}}}\\
+					\multicolumn{3}{|p{17cm}|}{}\\ \hline
+				\end{tabular}
+				\egroup
+			\end{adjustbox}
+		\end{table}
+	\end{titlepage}	
+}
+
+%%%%%%%%%%%%%%%%%%Konfigurattin Deckblatt%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\Jahrgang}{E4}
+\newcommand{\LaborName}{Lorem ipsum 3}
+\newcommand{\prof}{Prof. Dr. Hans Mueller}
+\newcommand{\HauptTitel}{Lorem ipsum dolor sit amet, consetetur sadipscing elitr.}
+\newcommand{\LaborTag}{\today}
+\newcommand{\Versuch}{XYZ 1}
+\newcommand{\erstePerson}{Muster, Max}
+\newcommand{\ersteMatNr}{2309677}
+\newcommand{\logo}{logo}
+\newcommand{\zweitePerson}{Mueller, Tobi}
+\newcommand{\zweiteMatNr}{2509481}
+\newcommand{\drittePerson}{Meyer, Andreas}
+\newcommand{\dritteMatNr}{2109378}
+\newcommand{\LinkAufgabe}{https://some/link/to/view.php?id=81238234}
