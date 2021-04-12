@@ -3,7 +3,10 @@
 %%%%%%%%%%%%%%%%
 % 1. In main.tex -> Document style -> "Choose your template" section replace defalut closing page
 % 	 \input{tex/templates/closingPage.tex}     % Sub file provieds closing page template
-% 2. In main.tex -> "Document content" use \closingPage to create the coling page  
+% 2. In main.tex -> Document style -> "Definitions" section define 
+%    \newcommand{\Versuch}{XYZ 1} 
+%    \newcommand{\LinkAufgabe}{https://some/link/to/view.php?id=81238234}
+% 3. In main.tex -> "Document content" use \closingPage to create the coling page  
 %    \closingPage 	       % Create closing page
 
 
@@ -11,6 +14,8 @@
 %% Requires %%
 %%%%%%%%%%%%%%
 % Definitions:  
+\newcommand{\versuch}{XYZ 1}                      % Attempt name            
+\newcommand{\linkVersuch}{https:somelink.html}	  % The link is inserted after the \versuch in the bibliography
 % - \definecolor{lightgray}{rgb}{0.95,0.95,0.95}
 
 % Packages:
@@ -43,6 +48,7 @@
     \end{table}
 	
 	\section{Quellenverzeichnis} 					% Make a new section
+	[1] Aufgabenblatt \versuch: \url{\linkVersuch}% Custom bibliography entry @TODO
 	\listoffigures                                  % List of figures
 	\listoftables                                   % List of tables
 }
