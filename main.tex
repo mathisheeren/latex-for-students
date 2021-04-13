@@ -13,15 +13,24 @@
 
 \usepackage[headsepline]{scrlayer-scrpage} % Set headers and footers
                                            % - "headsepline" activates the line under the header
+
+% Includes                                           
 \usepackage{subfiles}                      % Include sub text files
+\usepackage{pdfpages}                      % Enables embedding of PDFs
 
 % Font and characters
 \usepackage{ucs}                           % Charset
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}                   % LaTeX Fonts required in Western European coding
 \usepackage[ngerman]{babel}                % New german spelling
+\usepackage{lmodern}                       % More fluid typeface
+\usepackage{ulem}                          % Improves the possibilities to underline text
 
-\usepackage{amsmath,amssymb,amstext}       %  Mathematical extensions 
+\usepackage{listings}                      % Source Code Listings with syntax highlighting
+
+\usepackage{amsmath,amssymb,amstext}       % Mathematical extensions
+
+\usepackage{siunitx}                       % Set numbers and units using new commands 
 
 % Table and figure formatting
 \usepackage{float}                         % Placing graphics and tables with the [H] option 
@@ -38,12 +47,15 @@
     citecolor=black,                       % Cites colored black            
     ]{hyperref}                            % Use links in the document
 
+% Bibliography
 \usepackage{natbib}                        % Bibliography management
-\bibliographystyle{plain}                  % bibliography style
+\bibliographystyle{plain}                  % Bibliography style
 
+% Sub file Includes
 \input{tex/lib/customCommands.tex}         % Sub file provieds custom commands
 \input{tex/lib/karnaughsMaps.tex}          % Sub file provieds commands to draw Kanrnaugh's Maps
 \input{tex/lib/vhdlCode.tex}               % Sub file provieds commands for VHDL syntax highlighting
+
 
 %%%%%%%%%%%%%%%%%%%%
 %% Document style %%
