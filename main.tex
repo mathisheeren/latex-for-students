@@ -5,7 +5,7 @@
     parskip,             % Paragraphs without indent  
     bibliography=totoc,  % Add the bibliography to the table of contents (Literaturverzeichnis)
     index=totoc,         % Add the Index to the table of contents (Inhaltsverzeichnis)     
-    listof=totoc,       % Add the list of tables and the list of figures to the table of contents (Tabellen- und Abbildungsverzeichnis)
+    listof=totoc,        % Add the list of tables and the list of figures to the table of contents (Tabellen- und Abbildungsverzeichnis)
     %draft,              % Show where the overfull box occurred
     ]{scrartcl}          % Koma-Script article class
     
@@ -37,6 +37,9 @@
     linkcolor=black,                       % Internal links colored black
     citecolor=black,                       % Cites colored black            
     ]{hyperref}                            % Use links in the document
+
+\usepackage{natbib}                        % Bibliography management
+\bibliographystyle{plain}                  % bibliography style
 
 \input{tex/lib/customCommands.tex}         % Sub file provieds custom commands
 \input{tex/lib/karnaughsMaps.tex}          % Sub file provieds commands to draw Kanrnaugh's Maps
