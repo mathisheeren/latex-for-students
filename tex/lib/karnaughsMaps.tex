@@ -1,0 +1,188 @@
+%%%%%%%%%%%%%%
+%% Requires %%
+%%%%%%%%%%%%%%
+% Definitions:  
+
+% Packages:
+\usepackage{tikz}
+\usetikzlibrary{matrix,calc}
+
+
+%%%%%%%%%%%%%%%%%%%%%
+%% Karnaugh's maps %%
+%%%%%%%%%%%%%%%%%%%%%
+%isolated term
+%#1 - Optional. Space between node and grouping line. Default=0
+%#2 - node
+%#3 - filling color
+\newcommand{\groupTerm}[3][0]{
+	\draw[rounded corners=3pt, fill=#3, opacity=0.3] ($(#2.north west)+(135:#1)$) rectangle ($(#2.south east)+(-45:#1)$);
+}
+
+
+%internal group
+%#1 - Optional. Space between node and grouping line. Default=0
+%#2 - top left node
+%#3 - bottom right node
+%#4 - filling color
+\newcommand{\groupTerms}[4][0]{
+	\draw[rounded corners=3pt, fill=#4, opacity=0.3] ($(#3.south east)+(135:#1)$) rectangle ($(#2.north west)+(-45:#1)$);
+}
+
+%group lateral borders
+%#1 - Optional. Space between node and grouping line. Default=0
+%#2 - top left node
+%#3 - bottom right node
+%#4 - filling color
+\newcommand{\groupLeftRight}[4][0]{
+	\draw[rounded corners=3pt, fill=#4, opacity=0.3] ($(rf.east |- #2.north)+(90:#1)$)-| ($(#2.east)+(0:#1)$) |- ($(rf.east |- #3.south)+(-90:#1)$);
+	\draw[rounded corners=3pt, fill=#4, opacity=0.3] ($(cf.west |- #2.north)+(90:#1)$) -| ($(#3.west)+(180:#1)$) |- ($(cf.west |- #3.south)+(-90:#1)$);
+}
+
+%group top-bottom borders
+%#1 - Optional. Space between node and grouping line. Default=0
+%#2 - top left node
+%#3 - bottom right node
+%#4 - filling color
+\newcommand{\groupTopBottom}[4][0]{
+	\draw[rounded corners=3pt, fill=#4, opacity=0.3] ($(cf.south -| #2.west)+(180:#1)$) |- ($(#2.south)+(-90:#1)$) -| ($(cf.south -| #3.east)+(0:#1)$);
+	\draw[rounded corners=3pt, fill=#4, opacity=0.3] ($(rf.north -| #2.west)+(180:#1)$) |- ($(#3.north)+(90:#1)$) -| ($(rf.north -| #3.east)+(0:#1)$);
+}
+
+%group corners
+%#1 - Optional. Space between node and grouping line. Default=0
+%#2 - filling color
+\newcommand{\groupCorner}[2][0]{
+	\draw[rounded corners=3pt, opacity=.3] ($(rf.east |- 0.south)+(-90:#1)$) -| ($(0.east |- cf.south)+(0:#1)$);
+	\draw[rounded corners=3pt, opacity=.3] ($(rf.east |- 12.north)+(90:#1)$) -| ($(12.east |- rf.north)+(0:#1)$);
+	\draw[rounded corners=3pt, opacity=.3] ($(cf.west |- 3.south)+(-90:#1)$) -| ($(3.west |- cf.south)+(180:#1)$);
+	\draw[rounded corners=3pt, opacity=.3] ($(cf.west |- 15.north)+(90:#1)$) -| ($(15.west |- rf.north)+(180:#1)$);
+	\fill[rounded corners=3pt, fill=#2, opacity=.3] ($(rf.east |- 0.south)+(-90:#1)$) -|  ($(0.east |- cf.south)+(0:#1)$) [sharp corners] ($(rf.east |- 0.south)+(-90:#1)$) |-  ($(0.east |- cf.south)+(0:#1)$) ;
+	\fill[rounded corners=3pt, fill=#2, opacity=.3] ($(rf.east |- 12.north)+(90:#1)$) -| ($(12.east |- rf.north)+(0:#1)$) [sharp corners] ($(rf.east |- 12.north)+(90:#1)$) |- ($(12.east |- rf.north)+(0:#1)$) ;
+	\fill[rounded corners=3pt, fill=#2, opacity=.3] ($(cf.west |- 3.south)+(-90:#1)$) -| ($(3.west |- cf.south)+(180:#1)$) [sharp corners]($(cf.west |- 3.south)+(-90:#1)$) |- ($(3.west |- cf.south)+(180:#1)$) ;
+	\fill[rounded corners=3pt, fill=#2, opacity=.3] ($(cf.west |- 15.north)+(90:#1)$) -| ($(15.west |- rf.north)+(180:#1)$) [sharp corners] ($(cf.west |- 15.north)+(90:#1)$) |- ($(15.west |- rf.north)+(180:#1)$) ;
+}
+
+%Empty Karnaugh map 4x4
+\newenvironment{kvTable48}%
+{
+	\begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
+	\draw (0,0) grid (8,4);
+	%\draw (0,4) -- node [pos=0.7,above right,anchor=south west] {ab} node [pos=0.7,below left,anchor=north east] {cd} ++(135:1);
+	%
+	\matrix (mapa) [matrix of nodes,
+	column sep={0.8cm,between origins},
+	row sep={0.8cm,between origins},
+	every node/.style={minimum size=0.3mm},
+	anchor=24.center,
+	ampersand replacement=\&] at (0.5,0.5)
+	{
+		\& |(c00)| $ B $         \& |(c01)| $ B $   \& |(c00)| $ B $         \& |(c01)| $ B $      \& |(c11)| $ \overline{B} $        \& |(c10)|  $ \overline{B} $  \& |(c11)| $ \overline{B} $        \& |(c10)|  $ \overline{B} $ \& |(cf)| \phantom{00} \\
+		|(r00)| $ A $ \& |(0)|\phantom{0}\&|(1)|\phantom{0}\&|(2)|\phantom{0}\&|(3)|\phantom{0}\&|(4)|\phantom{0}\&|(5)|\phantom{0}\&|(6)|\phantom{0}\&|(7)|\phantom{0}\&$ \overline{D} $\\
+		|(r01)| $ A $ \&|(8)|\phantom{0} \&|(9)|\phantom{0}\&|(10)|\phantom{0}\&|(11)|\phantom{0}\&|(12)|\phantom{0}\&|(13)|\phantom{0}\&|(14)|\phantom{0}\&|(15)|\phantom{0}\&$ D $\\
+		|(r10)| $ \overline{A} $\&|(16)|\phantom{0}\&|(17)|\phantom{0} \& |(18)|\phantom{0}\&|(19)|\phantom{0}\&|(20)|\phantom{0}\&|(21)|\phantom{0}\&|(22)|\phantom{0}\&|(23)|\phantom{0}\&$ D $\\
+		|(r11)| $ \overline{A} $ \&|(24)|\phantom{0}\&|(25)|\phantom{0} \& |(26)|\phantom{0}\& |(27)|\phantom{0}\&|(28)|\phantom{0}\&|(29)|\phantom{0}\&|(30)|\phantom{0}\&|(31)|\phantom{0}\&$ \overline{D} $\\	
+		|(rf) | \phantom{00}\& $ \overline{E} $\& $ E $ \&   $ E $  \&  $ \overline{E} $ \&  $ \overline{E} $ \& $ E $\&   $ E $   \&     $ \overline{E} $  \&    \\
+		|(rf) | \phantom{00}\& $ \overline{C} $\& $ \overline{C} $ \&   $ C $  \&  $ C $ \&  $ C $ \& $ C $\&   $ \overline{C} $   \&     $ \overline{C} $  \&    \\
+	};
+}%
+{
+	\end{tikzpicture}
+}
+
+%Empty Karnaugh map 4x4
+\newenvironment{kvTable44}%
+{
+	\begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
+	\draw (0,0) grid (4,4);
+	%\draw (0,4) -- node [pos=0.7,above right,anchor=south west] {ab} node [pos=0.7,below left,anchor=north east] {cd} ++(135:1);
+	%
+	\matrix (mapa) [matrix of nodes,
+	column sep={0.8cm,between origins},
+	row sep={0.8cm,between origins},
+	every node/.style={minimum size=0.3mm},
+	anchor=12.center,
+	ampersand replacement=\&] at (0.5,0.5)
+	{
+		\& |(c00)| $ B $         \& |(c01)| $ B $         \& |(c11)| $ \overline{B} $        \& |(c10)|  $ \overline{B} $   \& |(cf)| \phantom{00} \\
+		|(r00)| $ A $             \& |(0)|  \phantom{0} \& |(1)|  \phantom{0} \& |(2)|  \phantom{0} \& |(3)|  \phantom{0} \&     $ \overline{C} $                 \\
+		|(r01)| $ A $            \& |(4)|  \phantom{0} \& |(5)|  \phantom{0} \& |(6)|  \phantom{0} \& |(7)|  \phantom{0} \&          $ C $           \\
+		|(r11)| $ \overline{A} $             \& |(8)| \phantom{0} \& |(9)| \phantom{0} \& |(10)| \phantom{0} \& |(11)| \phantom{0} \&   $ C $                  \\
+		|(r10)| $ \overline{A} $             \& |(12)|  \phantom{0} \& |(13)|  \phantom{0} \& |(14)| \phantom{0} \& |(15)| \phantom{0} \&  $ \overline{C} $            \\
+		|(rf) | \phantom{00}   \&    $ \overline{D} $     \&    $ D $        \&   $ D $                 \&     $ \overline{D} $          \&                     \\
+	};
+}%
+{
+	\end{tikzpicture}
+}
+
+%Empty Karnaugh map 2x4
+\newenvironment{kvTable24}%
+{
+	\begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
+	\draw (0,0) grid (4,2);
+	%\draw (0,2) -- node [pos=0.7,above right,anchor=south west] {bc} node [pos=0.7,below left,anchor=north east] {a} ++(135:1);
+	%
+	\matrix (mapa) [matrix of nodes,
+	column sep={0.8cm,between origins},
+	row sep={0.8cm,between origins},
+	every node/.style={minimum size=0.3mm},
+	anchor=4.center,
+	ampersand replacement=\&] at (0.5,0.5)
+	{
+		\& |(c00)| $ B $         \& |(c01)| $ B $         \& |(c11)| $ \overline{B} $        \& |(c10)|  $ \overline{B} $   \& |(cf)| \phantom{00} \\
+		|(r00)|  $ A $             \& |(0)|  \phantom{0} \& |(1)|  \phantom{0} \& |(2)|  \phantom{0} \& |(3)|  \phantom{0} \&                     \\
+		|(r01)|  $ \overline{A} $             \& |(4)|  \phantom{0} \& |(5)|  \phantom{0} \& |(6)|  \phantom{0} \& |(7)|  \phantom{0} \&                     \\
+		|(rf) | \phantom{00}  \&      $ \overline{C} $               \&      $ C $              \&     $ C $               \&    $ \overline{C} $                 \&                     \\
+	};
+}%
+{
+	\end{tikzpicture}
+}
+
+%Empty Karnaugh map 2x2
+\newenvironment{kvTable22}%
+{
+	\begin{tikzpicture}[baseline=(current bounding box.north),scale=0.8]
+	\draw (0,0) grid (2,2);
+	%\draw (0,2) -- node [pos=0.7,above right,anchor=south west] {b} node [pos=0.7,below left,anchor=north east] {a} ++(135:1);
+	%
+	\matrix (mapa) [matrix of nodes,
+	column sep={0.8cm,between origins},
+	row sep={0.8cm,between origins},
+	every node/.style={minimum size=0.3mm},
+	anchor=2.center,
+	ampersand replacement=\&] at (0.5,0.5)
+	{
+		\& |(c00)| $ B $          \& |(c01)|  $ \overline{B} $  \\
+		|(r00)| $ A $ \& |(0)|  \phantom{0} \& |(1)|  \phantom{0} \\
+		|(r01)|  $ \overline{A} $ \& |(2)|  \phantom{0} \& |(3)|  \phantom{0} \\
+	};
+}%
+{
+	\end{tikzpicture}
+}
+
+%Defines 8 or 16 values (0,1,X)
+\newcommand{\fillKv}[1]{%
+	\foreach \x [count=\xi from 0]  in {#1}
+	\path (\xi) node {\x};
+}
+
+%Places 1 in listed positions
+\newcommand{\minterms}[1]{%
+	\foreach \x in {#1}
+	\path (\x) node {1};
+}
+
+%Places 0 in listed positions
+\newcommand{\maxterms}[1]{%
+	\foreach \x in {#1}
+	\path (\x) node {0};
+}
+
+%Places X in listed positions
+\newcommand{\indeterminats}[1]{%
+	\foreach \x in {#1}
+	\path (\x) node {X};
+}
