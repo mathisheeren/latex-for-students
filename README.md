@@ -12,10 +12,10 @@ This project provides a template to create reports and academic papers in latex.
 ## How To Contribut
 If you would like to have new functions or templates that are not included in the project yet, feel free to create them yourself and add them to this project. :hugs: 
 
-## Contributors
+## Contributors :star:
 [FRautenberg](https://github.com/FRautenberg)
 
-## Special Thanks To
+## Special Thanks To :wink:
 [Ignasi](https://tex.stackexchange.com/users/1952/ignasi)
 
 ## Project
