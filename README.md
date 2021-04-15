@@ -5,7 +5,7 @@ This project provides a template to create reports and academic papers in latex.
 :heavy_check_mark: Drawing Karnaugh maps in LaTeX (KV-Diagram)  
 :heavy_check_mark: Custom VHDL Syntax Highlighting  
 
-## Example 💻
+## Example 🧾
 
 ## How To Start 👷‍
 
@@ -64,5 +64,5 @@ This is supposed to give you an overview of the use and structure of the project
 ## Project ☕
 https://github.com/mathisheeren/latex-for-students
 
-## License 
+## License 👮‍
 [GPL-3.0 License](LICENSE.txt)
