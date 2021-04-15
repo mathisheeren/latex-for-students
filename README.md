@@ -7,7 +7,7 @@ This project provides a template to create reports and academic papers in latex.
 
 ## Example 💻
 
-## How To Start 
+## How To Start 👷‍
 
 ## How To Contribute :hugs:
 If you would like to have new functions or templates that are not included in the project yet, feel free to create them yourself and add them to this project.
