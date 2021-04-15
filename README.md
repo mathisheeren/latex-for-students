@@ -10,25 +10,25 @@ This project provides a template to create reports and academic papers in latex.
 ## How To Start
 
 ## Project Structure
-C:.
-│   .gitignore
-│   LICENSE
-│   main.tex
-│   README.md
-├───src
-│   │   literature.bib
-│   └───img
-│           Logo.png
-└───tex
-    ├───lib
-    │       customCommands.tex
-    │       karnaughsMaps.tex
-    │       vhdlCode.tex
-    └───templates
-            closingPage.tex
-            closingPageHAW.tex
-            titlePageAcademicPaper.tex
-            titlePageReport.tex
+/latex-for-students
+├── .gitignore
+├── LICENSE
+├── main.tex
+├── README.md
+├── src
+│   ├── literature.bib
+│   └── img
+│       └── Logo.png
+└── tex
+    ├── lib
+    │   ├── customCommands.tex
+    │   ├── karnaughsMaps.tex
+    │   └── vhdlCode.tex
+    └── templates
+        ├── closingPage.tex
+        ├── closingPageHAW.tex
+        ├── titlePageAcademicPaper.tex
+        └── titlePageReport.tex
 
 ## How To Contribut
 If you would like to have new functions or templates that are not included in the project yet, feel free to create them yourself and add them to this project. :hugs: 
