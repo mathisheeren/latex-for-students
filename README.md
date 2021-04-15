@@ -1,9 +1,9 @@
 # Latex for Students
 This project provides a template to create reports and academic papers in latex. 
-- [x] Optimized for natural sciences.
-- [x] Choose between several predefined templates.
-- [x] Drawing Karnaugh's maps in LaTeX
-- [x] Custom VHDL Syntax Highlighting
+:heavy_check_mark: Optimized for natural sciences.
+:heavy_check_mark: Choose between several predefined templates.
+:heavy_check_mark: Drawing Karnaugh maps in LaTeX (KV-Diagramm)
+:heavy_check_mark: Custom VHDL Syntax Highlighting
 
 ## Example
 
