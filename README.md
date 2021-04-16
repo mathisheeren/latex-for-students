@@ -38,6 +38,26 @@ This is supposed to give you an overview of the use and structure of the project
 - Coming soon: Explanation of the individual files and folders
 
 ### Images and Graphics
+Include images and graphics with our custom commands.  
+The images and graphics will get centered and become a caption and a reference label.  
+The commands are looking for the specified files in the folder `src/img/`.  
+```latex
+% One Image
+% \imgOne{FileOne}{Scaling}{Signature}{Label}
+\imgOne{test.png}{0.5}{The Test figure}{Tstfig}
+
+% Tow Images
+% \imgTow{FileOne}{Scaling}{FileTow}{Scaling}{Signature}{Label}
+\imgTow{test1.png}{0.5}{test2.png}{0.5}{The Test figure}{Tstfig}
+
+% Three Images
+% \imgThree{FileOne}{Scaling}{FileTow}{Scaling}{FileThree}{Scaling}{Signature}{Label}
+\imgThree{test1.png}{0.5}{test2.png}{0.5}{test3.png}{0.5}{The Test figure}{Tstfig}
+
+% Four Images
+% \imgFour{FileOne}{Scaling}{FileTow}{Scaling}{FileThree}{Scaling}{FileFour}{Scaling}{Signature}{Label}
+\imgFour{test1.png}{0.5}{test2.png}{0.5}{test3.png}{0.5}{test4.png}{0.5}{The Test figure}{Tstfig}
+```
 
 ### Formulas
 
