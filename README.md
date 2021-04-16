@@ -42,20 +42,20 @@ Include images and graphics with our custom commands.
 The images and graphics will get centered and become a caption and a reference label.  
 The commands are looking for the specified files in the folder `src/img/`.  
 ```latex
-% One Image
-% \imgOne{FileOne}{Scaling}{Signature}{Label}
+%One Image
+%\imgOne{FileOne}{Scaling}{Signature}{Label}
 \imgOne{test.png}{0.5}{The Test figure}{Tstfig}
 
-% Tow Images
-% \imgTow{FileOne}{Scaling}{FileTow}{Scaling}{Signature}{Label}
+%Tow Images
+%\imgTow{FileOne}{Scaling}{FileTow}{Scaling}{Signature}{Label}
 \imgTow{test1.png}{0.5}{test2.png}{0.5}{The Test figure}{Tstfig}
 
-% Three Images
-% \imgThree{FileOne}{Scaling}{FileTow}{Scaling}{FileThree}{Scaling}{Signature}{Label}
+%Three Images
+%\imgThree{FileOne}{Scaling}{FileTow}{Scaling}{FileThree}{Scaling}{Signature}{Label}
 \imgThree{test1.png}{0.5}{test2.png}{0.5}{test3.png}{0.5}{The Test figure}{Tstfig}
 
-% Four Images
-% \imgFour{FileOne}{Scaling}{FileTow}{Scaling}{FileThree}{Scaling}{FileFour}{Scaling}{Signature}{Label}
+%Four Images
+%\imgFour{FileOne}{Scaling}{FileTow}{Scaling}{FileThree}{Scaling}{FileFour}{Scaling}{Signature}{Label}
 \imgFour{test1.png}{0.5}{test2.png}{0.5}{test3.png}{0.5}{test4.png}{0.5}{The Test figure}{Tstfig}
 ```
 
@@ -153,6 +153,25 @@ Replace `path` with the path to the PDF document you want to include relative to
 ```
 
 ### Include Code 
+To insert Code listings into your Latex use the following commands.  
+I recommend creating a new folder for your code files in your project under `src/<languageName>` e.g. `src/python`.  
+Replace `path` with the path to the code files you want to include relative to the `main.tex` file.
+- If you want to read more about how to customize code listings I recommend reading this [guide](https://www.overleaf.com/learn/latex/Code_listing).
+```latex
+% Include files
+\lstinputlisting[style=vhdl]{path/fileName}
+\lstinputlisting[style=vhdl]{VHDL/VHDL-Beschreibung.vhdl}
+
+%  Include code directly
+\begin{lstlisting}[style=vhdl]
+    entity FULL_ADD is
+        port( A, B, CIN : in bit ;
+        SUM, COUT : out bit );
+    end FULL_ADD;
+    architecture FA_1 of FULL_ADD is
+    end FA_1;
+\end{lstlisting}
+```
 
 ### References 
 
