@@ -21,10 +21,10 @@ This is supposed to give you an overview of the use and structure of the project
 **[Tables](#Tables)**<br>
 **[Listings](#Listings)**<br>
 **[Include PDF Documents](#Include-PDF-Documents)**<br>
-**[Include-Code](#Include-Code)**<br>
+**[Include Code](#Include-Code)**<br>
 **[References](#References)**<br>
 **[Sources](#Sources)**<br>
-**[Draw Karnaugh maps in LaTeX (KV-Diagram)](#Draw-Karnaugh-maps-in-LaTeX-(KV-Diagram))**<br>
+**[Draw Karnaugh maps in LaTeX (KV-Diagram)](#Draw-Karnaugh-maps-in-LaTeX-KV-Diagram)**<br>
 
 ### Project Structure
 /latex-for-students  
