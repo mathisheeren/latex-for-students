@@ -80,6 +80,26 @@ $ u_{M} = u_{R_M} + u_{q} $
 ```
 
 ### Tables
+Copy and paste this in your document if you want a nice formatted table.  
+Adjust the tabular Environment to fit your needs.  
+- This website provides a good [table generator](https://www.tablesgenerator.com/).   
+- If you want to read more about how to customize tables I recommend reading this [guide](https://de.overleaf.com/learn/latex/tables).   
+```latex
+\begin{table}[H]
+    \centering
+    \begin{adjustbox}{max width=\textwidth} % Adjusts the table to the maximum width 
+        \bgroup\def\arraystretch{1.5} % Distance between text and table  
+        \begin{tabular}{|p{6cm}|l|}
+            \hline\rowcolor{lightgray}
+            foo     & bar \\ \hline
+            1 	    & test \\ \hline
+        \end{tabular}
+        \egroup
+    \end{adjustbox}
+    \caption{Some Caption for the Table}  % Caption
+    \label{tab:exampleTable} % Label for reference within the document
+\end{table}
+```
 
 ### Listings
 
