@@ -122,6 +122,35 @@ Listing with specific characters:
 ```
 
 ### Include PDF Documents
+To insert PDF documents into your Latex use the following commands.  
+I recommend creating a new folder for your PDF documents in your project under `src/pdf`.  
+Replace `path` with the path to the PDF document you want to include relative to the `main.tex` file.   
+```latex
+% Insert PDF (On the page):
+\includegraphics[page=1,width=\textwidth,height=.9\textheight,keepaspectratio]{path/fileName}
+
+% Insert all PDF pages (Whole pages):
+\includepdf[pages=-]{path/fileName}
+
+% All pages but in reverse order (Whole pages):
+\includepdf[pages=last-1]{path/fileName}
+
+% All pages from ... to ... (Whole pages):
+% \includepdf[pages={from-to}]{path/fileName}
+\includepdf[pages={2-10}]{path/fileName}
+
+% Only certain pages X,Y and Z (Whole pages):
+% \includepdf[pages={X,Y,Z}]{path/fileName}
+\includepdf[pages={2,5,11}]{path/fileName}
+
+% Inserting a blank page between X and Y (Whole pages):
+% \includepdf[pages={X,{},Y}]{path/fileName}
+\includepdf[pages={2,{},4}]{path/fileName}
+
+% Combination possible (Whole pages):
+% \includepdf[pages={from-to, X,Y,{},Z}]{path/fileName}
+\includepdf[pages={2-7,2,4,{},6}]{path/fileName}
+```
 
 ### Include Code 
 
