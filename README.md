@@ -14,6 +14,10 @@ If you would like to have new functions or templates that are not included in th
 
 ## Documentation :green_book:
 This is supposed to give you an overview of the use and structure of the project. If you are missing further explanations open an Issue or add the missing explanation yourself.
+### Table of Contents
+**[Project Structure](#Project-Structure)**<br>
+**[Images and Graphics](#Images-and-Graphics)**<br>
+
 
 ### Project Structure
 /latex-for-students  
