@@ -153,8 +153,9 @@ Replace `path` with the path to the PDF document you want to include relative to
 ```
 
 ### Include Code 
-To insert Code listings into your Latex use the following commands.  
-I recommend creating a new folder for your code files in your project under `src/<languageName>` e.g. `src/python`.  
+To insert Code listings into your Latex use the following commands.
+If you don't want to include VHDL code use e.g. `[language=Python]` instead of `[style=vhdl]`.
+I recommend creating a new folder for your code files in your project under `src/<languageName>` e.g. `src/python`.    
 Replace `path` with the path to the code files you want to include relative to the `main.tex` file.
 - If you want to read more about how to customize code listings I recommend reading this [guide](https://www.overleaf.com/learn/latex/Code_listing).
 ```latex
