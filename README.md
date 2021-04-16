@@ -102,6 +102,24 @@ Adjust the tabular Environment to fit your needs.
 ```
 
 ### Listings
+For **Unordered lists** use `\begin{itemize}` and `\end{itemize}`.  
+For **Ordered lists** use `\begin{enumerate}` and `\end{enumerate}`.  
+- If you want to read more about how to customize listings I recommend reading this [guide](https://de.overleaf.com/learn/latex/lists).
+```latex
+\begin{itemize}
+    \item One bullet point
+    \item One more bullet point
+    \item Bullet point three
+\end{itemize}
+```
+Listing with specific characters:
+```latex
+\begin{itemize}
+    \item[a)] One bullet point
+    \item[*)] One more bullet point
+    \item[?)] Bullet point three
+\end{itemize}
+```
 
 ### Include PDF Documents
 
