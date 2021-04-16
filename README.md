@@ -60,6 +60,24 @@ The commands are looking for the specified files in the folder `src/img/`.
 ```
 
 ### Formulas
+To create a formula in a Latex document you must use a formula environment.  
+1. **Inline formulas** use the `$` before and at the end of the formula. 
+```latex
+% Example
+$ u_{M} = u_{R_M} + u_{q} $
+```
+2. **Centered** with and without numbering.
+- If you dont want a numbering use `\begin{align*}` and `\end{align*}`.
+- To define multiple formulas use `\\` at the end of the line.
+- Align among each other wit the `&` operator.
+```latex
+\begin{align}
+    U_a=\frac{R_4}{R_3+R_4}\cdot U_q\\
+    U_b=\frac{R_2}{R_1+R_2} \cdot U_q\\
+    U_a&=\frac{R_4}{R_3+R_4}\cdot U_q\\ 
+    U_b&=\frac{R_2}{R_1+R_2} \cdot U_q\\
+\end{align}
+```
 
 ### Tables
 
