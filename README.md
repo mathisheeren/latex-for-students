@@ -10,7 +10,9 @@ This project provides a template to create reports and academic papers in latex.
 ## How To Start 👷‍
 
 ## How To Contribute :hugs:
-If you would like to have new functions or templates that are not included in the project yet, feel free to create them yourself and add them to this project.
+If you would like to have new functions or templates that are not included in the project yet, feel free to create them yourself and add them to this project.  
+If you find an error, raise an issue.
+I am very happy about everyone who helps to make this project better. 
 
 ## Documentation :green_book:
 This is supposed to give you an overview of the use and structure of the project. If you are missing further explanations open an Issue or add the missing explanation yourself.
@@ -53,21 +55,21 @@ Include images and graphics with our custom commands.
 The images and graphics will get centered and become a caption and a reference label.  
 The commands are looking for the specified files in the folder `src/img/`.  
 ```latex
-%One Image
-%\imgOne{FileOne}{Scaling}{Signature}{Label}
-\imgOne{test.png}{0.5}{The Test figure}{Tstfig}
+%One figure
+%\figOne{FileOne}{Scaling}{Signature}{Label}
+\figOne{test.png}{0.5}{The Test figure}{Tstfig}
 
-%Tow Images
-%\imgTow{FileOne}{Scaling}{FileTow}{Scaling}{Signature}{Label}
-\imgTow{test1.png}{0.5}{test2.png}{0.5}{The Test figure}{Tstfig}
+%Tow figures
+%\figTow{FileOne}{Scaling}{FileTow}{Scaling}{Signature}{Label}
+\figTow{test1.png}{0.5}{test2.png}{0.5}{The Test figure}{Tstfig}
 
-%Three Images
-%\imgThree{FileOne}{Scaling}{FileTow}{Scaling}{FileThree}{Scaling}{Signature}{Label}
-\imgThree{test1.png}{0.5}{test2.png}{0.5}{test3.png}{0.5}{The Test figure}{Tstfig}
+%Three figures
+%\figThree{FileOne}{Scaling}{FileTow}{Scaling}{FileThree}{Scaling}{Signature}{Label}
+\figThree{test1.png}{0.5}{test2.png}{0.5}{test3.png}{0.5}{The Test figure}{Tstfig}
 
-%Four Images
-%\imgFour{FileOne}{Scaling}{FileTow}{Scaling}{FileThree}{Scaling}{FileFour}{Scaling}{Signature}{Label}
-\imgFour{test1.png}{0.5}{test2.png}{0.5}{test3.png}{0.5}{test4.png}{0.5}{The Test figure}{Tstfig}
+%Four figures
+%\figFour{FileOne}{Scaling}{FileTow}{Scaling}{FileThree}{Scaling}{FileFour}{Scaling}{Signature}{Label}
+\figFour{test1.png}{0.5}{test2.png}{0.5}{test3.png}{0.5}{test4.png}{0.5}{The Test figure}{Tstfig}
 ```
 
 ### Formulas
@@ -202,8 +204,67 @@ At the point in the document where the reference is to be inserted use:
  - Equation `eq:name`  
  
 ### Sources
+To make a source specification, the source must first be defined in the file `src/literature.bib`.
+- This website provides an awesome [bibliographie generator](https://www.tablesgenerator.com/).
+- If you want to read more about how to Citing with BibTeX I recommend reading this [guide](https://de.wikibooks.org/wiki/LaTeX-Kompendium:_Zitieren_mit_BibTeX).
+
+At the point in the document where the Citation is to be inserted use:  
+1. `\citep{name}` To output only the number from the bibliography e.g. [1]. 
+1. `\citep[][Page 8]{name}` To output the number from the bibliography and the page number e.g. [1, Page 8].
+1. `\citep[vgl.][Page 8]{name}` To add something before the number from the bibliography e.g. [vgl. 1, Page 8]. 
 
 ### Draw Karnaugh maps in LaTeX (KV-Diagram) 
+**Create KV diagrams**  
+You can create KV diagrams in the following sizes;
+1. 2x2 use `\begin{kvTable22}` and `\end{kvTable22}`.
+1. 2x4 use `\begin{kvTable24}` and `\end{kvTable24}`.
+1. 4x4 use `\begin{kvTable44}` and `\end{kvTable44}`.
+1. 4x8 use `\begin{kvTable48}` and `\end{kvTable48}`.    
+
+**Fill with values**  
+Use `fillKv{0,1,2,3,4,5,6,7,...}` to fill the KV diagram with values.       
+The values are filled from the first element at the top left to the last element at the bottom right.  
+The array index corresponds to the position number.  
+The first element of the array has the index 0 and is set to position 0.
+```latex
+\begin{kvTable24}
+    \fillKv{0,1,2,3,4,5,6,7} % Fill in values
+\end{kvTable24}
+```
+Only numbers can be entered. If an Indeterminate is to be entered instead of a number,    
+leave out the position where it is to be entered when filling in and use `\indeterminats{position}`.  
+```latex
+\begin{kvTable22}
+    \fillKv{0,1,2,3, ,5,6,7} % Fill in values
+    \indeterminats{4}        % Indeterminate at position 4
+\end{kvTable22}
+```
+
+**Group Terms**  
+You can mark groups and individual values in a desired color: 
+```latex
+\groupTerm{0}{green}                % Highlight individual value in color
+\groupTerms{0}{2}{red}              % Mark group of values in color
+\groupLeftRight{4}{11}{purple}      % Marking over edge (left/right)
+\groupTopBottom[3pt]{2}{14}{blue}   % Marking over edge (top/bottom)
+\groupCorner[2pt]{orange}           % Corners become colored marking
+```
+Example:
+```latex
+\begin{kvTable44}
+    \fillKv{
+        0,1,2,3,
+        4,5,6,7,
+        8,9,10,11,
+        12,13,14,15
+    }
+    \groupTerm{9}{red}                  % Highlight individual value in color
+    \groupTerms{2}{7}{green}            % Mark group of values in color
+    \groupLeftRight{4}{11}{purple}      % Marking over edge (left/right)
+    \groupTopBottom[3pt]{1}{13}{blue}   % Marking over edge (top/bottom)
+    \groupCorner[2pt]{orange}           % Corners become colored marking
+\end{kvTable44}
+```
 
 ## Contributors :star:
 [FRautenberg](https://github.com/FRautenberg)
