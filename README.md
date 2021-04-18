@@ -6,8 +6,10 @@ This project provides a template to create reports and academic papers in latex.
 :heavy_check_mark: Custom VHDL Syntax Highlighting  
 
 ## Example 🧾
+🛠 Coming soon
 
 ## How To Start 👷‍
+🛠 Coming soon
 
 ## How To Contribute :hugs:
 If you would like to have new functions or templates that are not included in the project yet, feel free to create them yourself and add them to this project.  
@@ -48,7 +50,7 @@ This is supposed to give you an overview of the use and structure of the project
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── closingPageHAW.tex  
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── titlePageAcademicPaper.tex  
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; └── titlePageReport.tex  
-- Coming soon: Explanation of the individual files and folders
+🛠 Coming soon: Explanation of the individual files and folders
 
 ### Images and Graphics
 Include images and graphics with our custom commands.  
