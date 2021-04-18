@@ -24,34 +24,34 @@
     ^{\circ}
 }
 
-% \imgOne{File name in the folder src/img/}{Scaling}{Signature}{Label}
-% Eg: \imgOne{test.png}{0.5}{The Test figure}{Tstfig}
-\newcommand{\imgOne}[4]{
+% \figOne{File name in the folder src/img/}{Scaling}{Signature}{Label}
+% Eg: \figOne{test.png}{0.5}{The Test figure}{Tstfig}
+\newcommand{\figOne}[4]{
     \begin{figure}[H]
         \begin{center}
             \includegraphics[scale=#2]{#1}
         \end{center}
         \caption{#3}
-        \label{Pic:#4}
+        \label{fig:#4}
     \end{figure}
 } 
 
-% \imgTow{FileOne}{Scaling}{FileTow}{Scaling}{Signature}{Label}
-% Eg: \imgTow{test1.png}{0.5}{test2.png}{0.5}{The Test figure}{Tstfig}
-\newcommand{\imgTow}[6]{
+% \figTow{FileOne}{Scaling}{FileTow}{Scaling}{Signature}{Label}
+% Eg: \figTow{test1.png}{0.5}{test2.png}{0.5}{The Test figure}{Tstfig}
+\newcommand{\figTow}[6]{
     \begin{figure}[H]
         \begin{center}
             \includegraphics[scale=#2]{#1}
             \includegraphics[scale=#4]{#3}
         \end{center}
         \caption{#5}
-        \label{Pic:#6}
+        \label{fig:#6}
     \end{figure}
 }
 
-% \imgThree{FileOne}{Scaling}{FileTow}{Scaling}{FileThree}{Scaling}{Signature}{Label}
-% Eg: \imgThree{test1.png}{0.5}{test2.png}{0.5}{test3.png}{0.5}{The Test figure}{Tstfig}
-\newcommand{\imgThree}[8]{
+% \figThree{FileOne}{Scaling}{FileTow}{Scaling}{FileThree}{Scaling}{Signature}{Label}
+% Eg: \figThree{test1.png}{0.5}{test2.png}{0.5}{test3.png}{0.5}{The Test figure}{Tstfig}
+\newcommand{\figThree}[8]{
     \begin{figure}[H]
         \begin{center}
             \includegraphics[scale=#2]{#1}
@@ -59,13 +59,13 @@
             \includegraphics[scale=#6]{#5}
         \end{center}
         \caption{#7}
-        \label{Pic:#8}
+        \label{fig:#8}
     \end{figure}
 }
 
-% \imgFour{FileOne}{Scaling}{FileTow}{Scaling}{FileThree}{Scaling}{FileFour}{Scaling}{Signature}{Label}
-% Eg: \imgFour{test1.png}{0.5}{test2.png}{0.5}{test3.png}{0.5}{test4.png}{0.5}{The Test figure}{Tstfig}
-\newcommand{\imgFour}[9]{       % Store first 9 arguments into temporary macros
+% \figFour{FileOne}{Scaling}{FileTow}{Scaling}{FileThree}{Scaling}{FileFour}{Scaling}{Signature}{Label}
+% Eg: \figFour{test1.png}{0.5}{test2.png}{0.5}{test3.png}{0.5}{test4.png}{0.5}{The Test figure}{Tstfig}
+\newcommand{\figFour}[9]{       % Store first 9 arguments into temporary macros
     \edef\tempa{\unexpanded{#1}}%
     \edef\tempb{\unexpanded{#2}}%
     \edef\tempc{\unexpanded{#3}}%
@@ -75,9 +75,9 @@
     \edef\tempg{\unexpanded{#7}}%
     \edef\temph{\unexpanded{#8}}%
     \edef\tempi{\unexpanded{#9}}%
-    \imgFourContinued
+    \figFourContinued
 }
-\newcommand{\imgFourContinued}[1]{
+\newcommand{\figFourContinued}[1]{
     \begin{figure}[H]
         \begin{center}
             \includegraphics[scale=\tempb]{\tempa}
@@ -86,7 +86,7 @@
             \includegraphics[scale=\temph]{\tempg}
         \end{center}
         \caption{\tempi}
-        \label{Pic:#1}
+        \label{fig:#1}
     \end{figure}
 }
 
