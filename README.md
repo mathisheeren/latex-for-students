@@ -198,7 +198,8 @@ At the point in the document where the reference is to be inserted use:
  There are common names for certain elements that you should follow.  (`\autoref{}` only works with these prefixes) 
  - Section `sec:name`
  - Table `tab:name`
- - Figure `fig:name`  
+ - Figure `fig:name`
+ - Equation `eq:name`  
  
 ### Sources
 
