@@ -22,7 +22,7 @@ This is supposed to give you an overview of the use and structure of the project
 **[Listings](#Listings)**<br>
 **[Include PDF Documents](#Include-PDF-Documents)**<br>
 **[Include Code](#Include-Code)**<br>
-**[References](#References)**<br>
+**[Cross referencing](#Cross-referencing)**<br>
 **[Sources](#Sources)**<br>
 **[Draw Karnaugh maps in LaTeX (KV-Diagram)](#Draw-Karnaugh-maps-in-LaTeX-KV-Diagram)**<br>
 
@@ -185,8 +185,21 @@ Replace `path` with the path to the code files you want to include relative to t
 \end{lstlisting}
 ```
 
-### References 
+### Cross referencing
+To make cross references to equations, sections or figures use the `\label{name}` command.  
+You must place the `\label{name}` directly after the element you want to reference to.  
+At the point in the document where the reference is to be inserted use:  
+1. `\ref{name}` To output only the number of the element. 
+1. `\pageref{name}` To output only the page number of the element.  
+1. `\autoref{name}` To added automatic prefix to the reference. 
 
+ To indicate what is being labeled it is best practice to add a prefix to the label name.  
+ This helps to keep track of the labels in large documents.  
+ There are common names for certain elements that you should follow.  (`\autoref{}` only works with these prefixes) 
+ - Section `sec:name`
+ - Table `tab:name`
+ - Figure `fig:name`  
+ 
 ### Sources
 
 ### Draw Karnaugh maps in LaTeX (KV-Diagram) 
