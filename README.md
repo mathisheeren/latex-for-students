@@ -246,10 +246,10 @@ leave out the position where it is to be entered when filling in and use `\indet
 **Group Terms**  
 You can mark groups and individual values in a desired color: 
 ```latex
-\groupTerm{0}{green}                % Highlight individual value in color
-\groupTerms{0}{2}{red}              % Mark group of values in color
+\groupTerm{9}{red}                  % Highlight individual value in color
+\groupTerms{2}{7}{green}            % Mark group of values in color
 \groupLeftRight{4}{11}{purple}      % Marking over edge (left/right)
-\groupTopBottom[3pt]{2}{14}{blue}   % Marking over edge (top/bottom)
+\groupTopBottom[3pt]{1}{13}{blue}   % Marking over edge (top/bottom)
 \groupCorner[2pt]{orange}           % Corners become colored marking
 ```
 Example:
