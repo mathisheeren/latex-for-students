@@ -216,6 +216,7 @@ At the point in the document where the Citation is to be inserted use:
 1. `\citep[vgl.][Page 8]{name}` To add something before the number from the bibliography e.g. [vgl. 1, Page 8]. 
 
 ### Draw Karnaugh maps in LaTeX (KV-Diagram) 
+![Example-4x4-groups-caption](../media/Media-Karnaugh-maps/Example-4x4-groups-caption.PNG)  
 **Create KV diagrams**  
 You can create KV diagrams in the following sizes;
 1. 2x2 use `\begin{kvTable22}` and `\end{kvTable22}`.
