@@ -61,6 +61,22 @@ This is supposed to give you an overview of the use and structure of the project
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── titlePageAcademicPaper.tex  
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; └── titlePageReport.tex  
 🛠 Coming soon: Explanation of the individual files and folders
+| Files / Folders | Description |
+|------|-------------|
+|main.tex|   |
+|src|   |
+|literature.bib|   |
+|img| |
+|tex| |
+|lib| |
+|customCommands.tex| | 
+|karnaughsMaps.tex| |
+|vhdlCode.tex| |
+|templates| |
+|closingPage.tex| |
+|closingPageHAW.tex| |
+|titlePageAcademicPaper.tex| |
+|titlePageReport.tex| |
 
 ### Images and Graphics
 Include images and graphics with our custom commands.  
