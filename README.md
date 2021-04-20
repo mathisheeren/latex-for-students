@@ -36,6 +36,8 @@ This is supposed to give you an overview of the use and structure of the project
 **[Include Code](#Include-Code)**<br>
 **[Cross referencing](#Cross-referencing)**<br>
 **[Sources](#Sources)**<br>
+**[Split latex code into multiple files](#Split-latex-code-into-multiple-files)**<br>
+**[Supperss page number](#Supperss-page-number)**<br>
 **[Draw Karnaugh maps in LaTeX (KV-Diagram)](#Draw-Karnaugh-maps-in-LaTeX-KV-Diagram)**<br>
 
 ### Project Structure
@@ -223,8 +225,19 @@ At the point in the document where the Citation is to be inserted use:
 1. `\citep[][Page 8]{name}` To output the number from the bibliography and the page number e.g. [1, Page 8].
 1. `\citep[vgl.][Page 8]{name}` To add something before the number from the bibliography e.g. [vgl. 1, Page 8]. 
 
+### Split latex code into multiple files
+You can suppress the page number if you use `\begin{noPageNumber}`.  
+The page numbering will be continued on the next page after `\end{noPageNumber}`.
+<br/><br/>
+![no page number](../media/examples/subfile.gif)
+
+### Supperss page number
+You can suppress the page number if you use `\subfile{tex/name.tex}`.  
+<br/><br/>
+![no page number](../media/examples/noPageNumber.gif)
+
 ### Draw Karnaugh maps in LaTeX (KV-Diagram) 
-![Example-4x4-groups-caption](../media/How-To-Start/clone.gif)  
+![Example-4x4-groups-caption](../media/Media-Karnaugh-maps/Example-4x4-groups-caption.png)  
 **Create KV diagrams**  
 You can create KV diagrams in the following sizes;
 1. 2x2 use `\begin{kvTable22}` and `\end{kvTable22}`.
