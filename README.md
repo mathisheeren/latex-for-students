@@ -9,7 +9,7 @@ This project provides a template to create reports and academic papers in latex.
 🛠 Coming soon
 
 ## How To Start 👷‍
-![clone]()
+![clone](../media/How-To-Start/clone.gif)
 
 ## How To Contribute :hugs:
 If you would like to have new functions or templates that are not included in the project yet, feel free to create them yourself and add them to this project.  
