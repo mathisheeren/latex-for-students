@@ -226,13 +226,13 @@ At the point in the document where the Citation is to be inserted use:
 1. `\citep[vgl.][Page 8]{name}` To add something before the number from the bibliography e.g. [vgl. 1, Page 8]. 
 
 ### Split latex code into multiple files
-You can suppress the page number if you use `\subfile{tex/name.tex}`.  
+You can split latex code into multiple files if you use `\subfile{tex/name.tex}`.  
 <br/><br/>
 ![no page number](../media/examples/subfile.gif)
 
 ### Supperss page number
-You can suppress the page number if you use `\begin{noPageNumber}`.
-The page numbering will be continued on the next page after `\end{noPageNumber}`.  
+You can suppress the page number if you use `\begin{noPageNumber}`.  
+The page numbering will be continued on the next page after `\end{noPageNumber}`.    
 <br/><br/>
 ![no page number](../media/examples/noPageNumber.gif)
 
