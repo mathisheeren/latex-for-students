@@ -9,7 +9,15 @@ This project provides a template to create reports and academic papers in latex.
 🛠 Coming soon
 
 ## How To Start 👷‍
+### Clone the repository 
+Clone the repository and open it in the Latex editor of your choice.  
+I recommend using [TeXstudio](https://www.texstudio.org/). 
+<br/><br/>
 ![clone](../media/How-To-Start/clone.gif)
+### Adjust the template
+Adjust the template or change it to another from `tex/templates`.  
+<br/><br/>
+![Adjust templates](../media/How-To-Start/templates.gif)
 
 ## How To Contribute :hugs:
 If you would like to have new functions or templates that are not included in the project yet, feel free to create them yourself and add them to this project.  
