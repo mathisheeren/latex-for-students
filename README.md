@@ -237,7 +237,7 @@ The page numbering will be continued on the next page after `\end{noPageNumber}`
 ![no page number](../media/examples/noPageNumber.gif)
 
 ### Draw Karnaugh maps in LaTeX (KV-Diagram) 
-![Example-4x4-groups-caption](../media/Media-Karnaugh-maps/Example-4x4-groups-caption.png)  
+![Example-4x4-groups-caption](../media/Media-Karnaugh-maps/Example-4x4-groups-caption.PNG)  
 **Create KV diagrams**  
 You can create KV diagrams in the following sizes;
 1. 2x2 use `\begin{kvTable22}` and `\end{kvTable22}`.
