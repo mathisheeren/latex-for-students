@@ -87,9 +87,9 @@ The commands are looking for the specified files in the folder `src/img/`.
 %\figOne{FileOne}{Scaling}{Signature}{Label}
 \figOne{test.png}{0.5}{The Test figure}{Tstfig}
 
-%Tow figures
-%\figTow{FileOne}{Scaling}{FileTow}{Scaling}{Signature}{Label}
-\figTow{test1.png}{0.5}{test2.png}{0.5}{The Test figure}{Tstfig}
+%Two figures
+%\figTwo{FileOne}{Scaling}{FileTow}{Scaling}{Signature}{Label}
+\figTwo{test1.png}{0.5}{test2.png}{0.5}{The Test figure}{Tstfig}
 
 %Three figures
 %\figThree{FileOne}{Scaling}{FileTow}{Scaling}{FileThree}{Scaling}{Signature}{Label}
