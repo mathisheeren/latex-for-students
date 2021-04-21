@@ -6,7 +6,7 @@ This project provides a template to create reports and academic papers in latex.
 :heavy_check_mark: Custom VHDL Syntax Highlighting  
 
 ## Example 🧾
-🛠 Coming soon
+[![Example pdf for default template](../media/examples/defaultExample.gif)](../media/examples/defaultExample.pdf)
 
 ## How To Start 👷‍
 ### Clone the repository 
