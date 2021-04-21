@@ -60,23 +60,23 @@ This is supposed to give you an overview of the use and structure of the project
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── closingPageHAW.tex  
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── titlePageAcademicPaper.tex  
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; └── titlePageReport.tex  
-🛠 Coming soon: Explanation of the individual files and folders
+
 | Files / Folders | Description |
 |------|-------------|
-|main.tex|   |
-|src|   |
-|literature.bib|   |
-|img| |
-|tex| |
-|lib| |
-|customCommands.tex| | 
-|karnaughsMaps.tex| |
-|vhdlCode.tex| |
-|templates| |
-|closingPage.tex| |
-|closingPageHAW.tex| |
-|titlePageAcademicPaper.tex| |
-|titlePageReport.tex| |
+|main.tex|Is the main file. The structure of the latex document is described here. <br/> All packages are imported and the formatting settings are made.|
+|src|Contains all (non-latex) files that are to be included. <br/>For a better structuring new subfolders can be created. |
+|literature.bib|Here all sources are specified which are to be used for source information in the document.|
+|img|Contains all images to be included in the document.|
+|tex|Contains all latex documents of the project. <br/> New files can also be created here. |
+|lib|Contains files with custom commands that provide new functionality. <br/>How to use the commands is described in the documentation.|
+|customCommands.tex|Contains all self-created comandos that do not specifically belong to a topic.| 
+|karnaughsMaps.tex|Contains all commands needed to create karnaugh Maps.|
+|vhdlCode.tex|Setting for the display of VHDL code.|
+|templates|All the different templates that can be used are stored here.|
+|closingPage.tex|Is the default closing page. Contains the list of sources, bibliography and list of tables.|
+|closingPageHAW.tex|Contains the list of sources, bibliography and list of tables and an additional link for the assignment.|
+|titlePageAcademicPaper.tex|For work that is written on your own, such as term papers.|
+|titlePageReport.tex|For work that is written in groups such as laboratory reports.|
 
 ### Images and Graphics
 Include images and graphics with our custom commands.  
