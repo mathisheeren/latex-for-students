@@ -96,6 +96,117 @@
         \tableofcontents                   % Create table of contents
     \end{noPageNumber}
     
+    \section{Lorem ipsum dolor sit amet}
+        Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.\citep[vgl.][Page 8]{weinzierl_handbuch_2008} At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+    
+        \begin{table}[H]
+            \centering
+            \begin{adjustbox}{max width=\textwidth} % Adjusts the table to the maximum width 
+                \bgroup\def\arraystretch{1.5} % Distance between text and table  
+                \begin{kvTable44}
+                    \fillKv{
+                        0,1,2,3,
+                        4,5,6,7,
+                        8,9,10,11,
+                        12,13,14,15
+                    }
+                    \groupTerm{9}{red}                  % Highlight individual value in color
+                    \groupTerms{2}{7}{green}            % Mark group of values in color
+                    \groupLeftRight{4}{11}{purple}      % Marking over edge (left/right)
+                    \groupTopBottom[3pt]{1}{13}{blue}   % Marking over edge (top/bottom)
+                    \groupCorner[2pt]{orange}           % Corners become colored marking
+                \end{kvTable44}
+                \egroup
+            \end{adjustbox}
+            \caption{Karnaugh-Veitch-Diagramm }  % Caption
+            \label{tab:exampleTable} % Label for reference within the document
+        \end{table}   
+    
+    \section{Duis autem vel eum iriure}
+        \subsection{Dolor in hendrerit in vulputate velit }
+            Esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   
+            
+            %  Include code directly
+            \begin{lstlisting}[style=vhdl]
+                entity FULL_ADD is
+                port( A, B, CIN : in bit ;
+                SUM, COUT : out bit );
+                end FULL_ADD;
+                architecture FA_1 of FULL_ADD is
+                end FA_1;
+            \end{lstlisting}
+        
+        \subsection{Ut wisi enim ad minim veniam}
+            Quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.  
+            \begin{table}[H]
+                \centering
+                \begin{adjustbox}{max width=\textwidth} % Passt die Tabelle an die maximale Breite an 
+                    \bgroup\def\arraystretch{1.5} % Abstand zwischen Text und Tabelle  
+                    \begin{tabular}{|l|l|l|l|}
+                        \hline\rowcolor{lightgray}
+                        k&{$ U_E\text{ in } V $} & {$ \overline{U}_D \text{ in } V$} & {$ \Delta U \text{ in } mV$}\\ \hline
+                        0&0		     & 0		 & 0\\\hline 
+                        1&0,25		 & 0,27		 & 20\\\hline 
+                        2&0,5		 & 0,505		 & 5\\\hline 
+                        3&0,75		 & 0,89		 & 140\\\hline 
+                        4&1		     & 1,255		 & 255\\\hline 
+                        5&1,25		 & 1,435		 & 185\\\hline 
+                        6&1,5		 & 1,675		 & 175\\\hline 
+                        7&1,75		 & 1,825		 & 75\\\hline 
+                    \end{tabular}
+                    \egroup
+                \end{adjustbox}
+                \caption{Messung von mittlerer Spannung $ \overline{U}_D $ bei verschiedene Eingangsspannungen $ U_E $ }  %caption wird linkbündig geschrieben siehe package
+                \label{tab:24a} %refernziert den Zählindex der Tabelle 
+                %\ref{tab:Klemmspannung}
+            \end{table}
+            \begin{align}
+                U_{LSB,real}=2\cdot max(abs(\Delta_U))=2\cdot 255~mV=510~mV  \\
+                ENOB = ld(\dfrac{U_{FS}}{U_{LSB,real}})=ld(\dfrac{5~V}{510~mV})=3,29~Bit
+            \end{align}
+        
+        \subsection{Nam liber tempor cum soluta nobis}
+            Eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.   
+            
+            \begin{align}
+                \frac{u_1}{V}=C\cdot \left( \frac{i}{mA}\right)^\beta 
+                \label{formel:1}
+            \end{align}
+            
+            
+            \begin{align}
+                R_1=\frac{u_1}{i_1}
+                \label{formel:2}
+            \end{align}
+            
+            
+            \begin{align}
+                r_1=\frac{du_1}{di}=\beta\cdot C\cdot\left( \frac{i}{mA}\right) ^{\beta -1}
+                \label{formel:3}
+            \end{align} 
+            
+            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.   
+            
+            \figOne{vs3ch1ac.png}{0.5}{Oszilloskop CH1 mit AC-Kopplung}{Kopplung}
+            
+    \section{At vero eos et accusam et justo}
+        \subsection{Duo dolores et ea rebum}
+            Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.   
+         \subsection{Consetetur sadipscing elitr}
+             Sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus.   
+            \figOne{vs-12-b2.png}{0.5}{$U_4$ an Diode 4 mit DC-Kopplung}{Dc}
+        
+         \subsection{Accusam et justo duo dolores et}
+            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.\citep[vgl.][Page 8]{woitowitz_digitaltechnik:_2012}   
+    
+%    \section{Duis autem vel eum iriure dolor}
+%        \subsection{In hendrerit in vulputate}
+%              Velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.\citep[vgl.][Page 8]{tiHsDac} Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.   
+%        \subsection{Ut wisi enim ad minim veniam}
+%            Quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   
+%        
+%        Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
+    
     \closingPage                           % Create closing page
     
 \end{document}
