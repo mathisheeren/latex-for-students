@@ -21,6 +21,12 @@ Adjust the template or change it to another from `tex/templates`.
 <br/><br/>
 ![Adjust templates](../media/How-To-Start/templates.gif)
 
+### Fill it with your content
+Open the file `tex/part1.tex` and fill it as you like.  
+Tip in [Texstudio](https://www.texstudio.org/) you can open the sub file directly with `Ctrl+Left mouse button click`.   
+You can also create more sub files how to do it is described in the [documentation](doc/README.md).
+<br/><br/>
+
 ## Documentation :green_book:
 The [documentation](doc/README.md) is supposed to give you an overview of the use and structure of the project. All helpful commands are explained there. If you are missing further explanations open an Issue or add the missing explanation yourself.
 
