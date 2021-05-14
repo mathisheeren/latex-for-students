@@ -85,7 +85,7 @@ Listing with specific characters:
 ### Split latex code into multiple files
 You can split latex code into multiple files if you use `\subfile{tex/name.tex}`.  
 <br/><br/>
-![no page number](../media/examples/subfile.gif)
+![no page number](../../media/examples/subfile.gif)
 
 ### Cross referencing
 To make cross references to equations, sections or figures use the `\label{name}` command.  
@@ -170,10 +170,10 @@ Replace `path` with the path to the code files you want to include relative to t
 You can suppress the page number if you use `\begin{noPageNumber}`.  
 The page numbering will be continued on the next page after `\end{noPageNumber}`.    
 <br/><br/>
-![no page number](../media/examples/noPageNumber.gif)
+![no page number](../../media/examples/noPageNumber.gif)
 
 ### Draw Karnaugh maps in LaTeX (KV-Diagram) 
-![Example-4x4-groups-caption](../media/Media-Karnaugh-maps/Example-4x4-groups-caption.PNG)  
+![Example-4x4-groups-caption](../../media/Media-Karnaugh-maps/Example-4x4-groups-caption.PNG)  
 **Create KV diagrams**  
 You can create KV diagrams in the following sizes;
 1. 2x2 use `\begin{kvTable22}` and `\end{kvTable22}`.
