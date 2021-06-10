@@ -58,7 +58,7 @@ $ u_{M} = u_{R_M} + u_{q} $
     U_a=\frac{R_4}{R_3+R_4}\cdot U_q\\
     U_b=\frac{R_2}{R_1+R_2} \cdot U_q\\
     U_a&=\frac{R_4}{R_3+R_4}\cdot U_q\\ 
-    U_b&=\frac{R_2}{R_1+R_2} \cdot U_q\\
+    U_b&=\frac{R_2}{R_1+R_2} \cdot U_q
 \end{align}
 ```
 
