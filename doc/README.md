@@ -146,7 +146,7 @@ Replace `path` with the path to the PDF document you want to include relative to
 % Insert PDF with 90° rotatet page
 \newpage
 \global\pdfpageattr\expandafter{\the\pdfpageattr/Rotate 90}
-	\includepdf[pages=-,angle=90]{src/hw_diabolo.pdf}
+	\includepdf[pages=-,angle=90]{path/fileName}
 \global\pdfpageattr\expandafter{\the\pdfpageattr/Rotate 0}
 ```
 
