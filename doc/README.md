@@ -142,6 +142,12 @@ Replace `path` with the path to the PDF document you want to include relative to
 % Combination possible (Whole pages):
 % \includepdf[pages={from-to, X,Y,{},Z}]{path/fileName}
 \includepdf[pages={2-7,2,4,{},6}]{path/fileName}
+
+% Insert PDF with 90° rotatet page
+\newpage
+\global\pdfpageattr\expandafter{\the\pdfpageattr/Rotate 90}
+	\includepdf[pages=-,angle=90]{path/fileName}
+\global\pdfpageattr\expandafter{\the\pdfpageattr/Rotate 0}
 ```
 
 ### Include Code 
