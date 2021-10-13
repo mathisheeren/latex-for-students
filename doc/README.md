@@ -107,7 +107,7 @@ At the point in the document where the reference is to be inserted use:
 To make a source specification, the source must first be defined in the file `src/literature.bib`.
 - This website provides an awesome [bibliographie generator](https://www.tablesgenerator.com/).
 - If you want to read more about how to Citing with BibTeX I recommend reading this [guide](https://de.wikibooks.org/wiki/LaTeX-Kompendium:_Zitieren_mit_BibTeX).
-- Additionaly Tex musst be updated individually after every edit in the file `src/literature.bib` with `TexStudio -> Tools -> Bibligraphy (F8)` to index new literature
+- If the compilation fails, it may help to update the file src/literature.bib with TexStudio -> Tools -> Bibligraphy (F8) to index new literature.
 
 At the point in the document where the Citation is to be inserted use:  
 1. `\citep{name}` To output only the number from the bibliography e.g. [1]. 
