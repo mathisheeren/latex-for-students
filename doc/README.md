@@ -18,11 +18,15 @@ The commands are looking for the specified files in the folder `src/img/`.
 %Four figures
 %\figFour{FileOne}{Scaling}{FileTow}{Scaling}{FileThree}{Scaling}{FileFour}{Scaling}{Signature}{Label}
 \figFour{test1.png}{0.5}{test2.png}{0.5}{test3.png}{0.5}{test4.png}{0.5}{The Test figure}{Tstfig}
+```
+Rotatet figures
+```latex
+%90 degree rotatet figure
+\includegraphics[angle=90,origin=c]{src/img/File}
 
 %90 degree rotatet figure and caption
-\usepackage{rotating}                      % Libary to rotate figures
 \begin{sidewaysfigure}
-	\figOne{test.png}{0.5}{The Test figure}{Tstfig}
+	\figOne{FileOne}{Scaling}{Signature}{Label}
 \end{sidewaysfigure}
 ```
 
