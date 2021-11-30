@@ -163,17 +163,17 @@ Replace `path` with the path to the PDF document you want to include relative to
 
 ### Include Code 
 To insert Code listings into your Latex use the following commands.
-If you don't want to include VHDL code use e.g. `[language=Python]` instead of `[style=vhdl]`.
+If you don't want to include VHDL code use e.g. `[language=Python]` instead of `[style=vhdl]`.  
 I recommend creating a new folder for your code files in your project under `src/<languageName>` e.g. `src/python`.    
 Replace `path` with the path to the code files you want to include relative to the `main.tex` file.
 - If you want to read more about how to customize code listings I recommend reading this [guide](https://www.overleaf.com/learn/latex/Code_listing).
 ```latex
 % Include files
-\lstinputlisting[style=vhdl]{path/fileName}
-\lstinputlisting[style=vhdl]{VHDL/VHDL-Beschreibung.vhdl}
+\lstinputlisting[style=cvs, caption=Some test, label=test]{path/fileName} % c code in Visualstudio look
+\lstinputlisting[style=vhdl, caption=Some test, label=test]{VHDL/VHDL-Beschreibung.vhdl}
 
 %  Include code directly
-\begin{lstlisting}[style=vhdl]
+\begin{lstlisting}[style=vhdl, caption=Some test, label=test]
     entity FULL_ADD is
         port( A, B, CIN : in bit ;
         SUM, COUT : out bit );
@@ -260,7 +260,6 @@ Example:
 &nbsp; &nbsp; &nbsp; &nbsp; │&nbsp; &nbsp; &nbsp; └── vhdlCode.tex  
 &nbsp; &nbsp; &nbsp; &nbsp; └── templates  
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── closingPage.tex  
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── closingPageHAW.tex  
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ├── titlePageAcademicPaper.tex  
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; └── titlePageReport.tex  
 
