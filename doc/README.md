@@ -276,6 +276,5 @@ Example:
 |vhdlCode.tex|Setting for the display of VHDL code.|
 |templates|All the different templates that can be used are stored here.|
 |closingPage.tex|Is the default closing page. Contains the list of sources, bibliography and list of tables.|
-|closingPageHAW.tex|Contains the list of sources, bibliography and list of tables and an additional link for the assignment.|
 |titlePageAcademicPaper.tex|For work that is written on your own, such as term papers.|
 |titlePageReport.tex|For work that is written in groups such as laboratory reports.|
