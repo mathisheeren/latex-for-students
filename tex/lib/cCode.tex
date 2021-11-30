@@ -1,0 +1,84 @@
+%@TODO <inlude> color https://tex.stackexchange.com/questions/25257/how-to-use-a-comma-in-lstlisting-keywords
+% captions and ref https://stackoverflow.com/questions/2814714/how-to-change-title-in-listings
+%%%%%%%%%%%%%%
+%% Requires %%
+%%%%%%%%%%%%%%
+% Definitions:  
+% - \definecolor{lightgray}{rgb}{0.95,0.95,0.95}
+
+% Packages:
+% - \usepackage{listings}                          % Source Code Listings  
+
+
+% Exsample \lstinputlisting[style=cvs, caption=Some test, label=test]{src/c_AbgabeNr2_2.txt}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% c Syntax Highlighting %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{vsmag}{RGB}{196, 72, 255} 
+\definecolor{vsblue}{RGB}{0, 0, 255}
+\definecolor{vsgreen}{RGB}{52, 128, 0}
+\definecolor{vsred}{RGB}{163, 21, 21}
+\definecolor{vsgray}{RGB}{128, 128, 128}
+
+\colorlet{keywordvar}{vsblue}
+\colorlet{keywordcontrol}{vsmag}
+\colorlet{comment}{vsgreen}
+\colorlet{string}{vsred}
+
+\lstdefinelanguage{CVS}{                          % Custom syntax highlighting
+	basicstyle   = \footnotesize \ttfamily,
+	alsoletter = {\#},
+	morecomment=[l]{//}, %use comment-line-style!
+	morecomment=[s]{/*}{*/}, %for multiline comments
+	morekeywords=[1]{                              % All Keywords in color blue
+		abstract, event, new, struct, explicit, extern, this, bool, false, operator, true, override, float, private, char, protected, public, class, const,
+		using, int, virtual, interface, sealed, volatile, delegate, internal, short, void, sizeof, double, long, static,
+		enum, namespace
+	},
+	morekeywords=[2]{                              % All Keywords in color red
+		switch, throw, break, finally, case, try, params, typeof,
+		catch, for, goto, if, continue, return, default, do,  while, else
+	},
+	morekeywords=[3]{                              % All Keywords in color red
+	\#define, \#include
+	},
+	keywordstyle = [1]\color{keywordvar}\bfseries,
+	keywordstyle = [2]\color{keywordcontrol}\bfseries,
+	keywordstyle = [3]\color{vsgray}\bfseries,
+	commentstyle = \color{comment},                            % All Keywords in color green
+	stringstyle = \color{string}\ttfamily,
+	morestring=[b]',
+	morestring=[b]"
+}
+
+\lstdefinestyle{cvs}{
+    backgroundcolor=\color{lightgray},
+    frame        = single, 
+    language     = CVS,
+    breaklines   = true,                           % sets automatic line breaking
+    tabsize      = 2,                              % sets default tabsize to 3 spaces
+    numbers=left, 
+    numberstyle=\tiny, 
+    numbersep=5pt,  
+    extendedchars=true,
+    captionpos=b 
+}
+
+% UTF8 Encoding
+\lstset{literate=
+    {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+    {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+    {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+    {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+    {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+    {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+    {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+    {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+    {ã}{{\~a}}1 {ẽ}{{\~e}}1 {ĩ}{{\~i}}1 {õ}{{\~o}}1 {ũ}{{\~u}}1
+    {Ã}{{\~A}}1 {Ẽ}{{\~E}}1 {Ĩ}{{\~I}}1 {Õ}{{\~O}}1 {Ũ}{{\~U}}1
+    {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+    {ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1
+    {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+    {€}{{\euro}}1 {£}{{\pounds}}1 {«}{{\guillemotleft}}1
+    {»}{{\guillemotright}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?`}}1 {¡}{{!`}}1 
+}
