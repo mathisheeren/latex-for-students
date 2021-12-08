@@ -169,8 +169,8 @@ Replace `path` with the path to the code files you want to include relative to t
 - If you want to read more about how to customize code listings I recommend reading this [guide](https://www.overleaf.com/learn/latex/Code_listing).
 ```latex
 % Include files
-\lstinputlisting[style=cvs, caption=Some test, label=test]{path/fileName} % c code in Visualstudio look
-\lstinputlisting[style=vhdl, caption=Some test, label=test]{VHDL/VHDL-Beschreibung.vhdl}
+\lstinputlisting[style=cvs, caption=Some test, label=lst:test]{path/fileName} % c code in Visualstudio look
+\lstinputlisting[style=vhdl, caption=Some test, label=lst:test]{VHDL/VHDL-Beschreibung.vhdl}
 
 %  Include code directly
 \begin{lstlisting}[style=vhdl, caption=Some test, label=test]
