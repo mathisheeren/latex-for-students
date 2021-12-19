@@ -111,7 +111,8 @@ At the point in the document where the reference is to be inserted use:
  - Section `sec:name`
  - Table `tab:name`
  - Figure `fig:name`
- - Equation `eq:name`  
+ - Equation `eq:name`
+ - Listing `list:name`  
  
 ### Sources
 To make a source specification, the source must first be defined in the file `src/literature.bib`.
@@ -169,8 +170,8 @@ Replace `path` with the path to the code files you want to include relative to t
 - If you want to read more about how to customize code listings I recommend reading this [guide](https://www.overleaf.com/learn/latex/Code_listing).
 ```latex
 % Include files
-\lstinputlisting[style=cvs, caption=Some test, label=test]{path/fileName} % c code in Visualstudio look
-\lstinputlisting[style=vhdl, caption=Some test, label=test]{VHDL/VHDL-Beschreibung.vhdl}
+\lstinputlisting[style=cvs, caption=Some test, label=list:test]{path/fileName} % c code in Visualstudio look
+\lstinputlisting[style=vhdl, caption=Some test, label=list:test]{VHDL/VHDL-Beschreibung.vhdl}
 
 %  Include code directly
 \begin{lstlisting}[style=vhdl, caption=Some test, label=test]
