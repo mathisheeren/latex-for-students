@@ -75,6 +75,7 @@ $ u_{M} = u_{R_M} + u_{q} $
 ### Listings
 For **Unordered lists** use `\begin{itemize}` and `\end{itemize}`.  
 For **Ordered lists** use `\begin{enumerate}` and `\end{enumerate}`.  
+For lists **without spacing** between entries use `[noitemsep]` e.g. `\begin{itemize}[noitemsep]` and `\end{itemize}`.  
 - If you want to read more about how to customize listings I recommend reading this [guide](https://de.overleaf.com/learn/latex/lists).
 ```latex
 \begin{itemize}
