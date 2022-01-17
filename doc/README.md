@@ -112,7 +112,7 @@ At the point in the document where the reference is to be inserted use:
  - Table `tab:name`
  - Figure `fig:name`
  - Equation `eq:name`
- - Listing `list:name`  
+ - Listing `lst:name`  
  
 ### Sources
 To make a source specification, the source must first be defined in the file `src/literature.bib`.
