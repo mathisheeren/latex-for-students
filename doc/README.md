@@ -75,6 +75,7 @@ $ u_{M} = u_{R_M} + u_{q} $
 ### Listings
 For **Unordered lists** use `\begin{itemize}` and `\end{itemize}`.  
 For **Ordered lists** use `\begin{enumerate}` and `\end{enumerate}`.  
+For lists **without spacing** between entries use `[noitemsep]` e.g. `\begin{itemize}[noitemsep]` and `\end{itemize}`.  
 - If you want to read more about how to customize listings I recommend reading this [guide](https://de.overleaf.com/learn/latex/lists).
 ```latex
 \begin{itemize}
@@ -112,7 +113,7 @@ At the point in the document where the reference is to be inserted use:
  - Table `tab:name`
  - Figure `fig:name`
  - Equation `eq:name`
- - Listing `list:name`  
+ - Listing `lst:name`  
  
 ### Sources
 To make a source specification, the source must first be defined in the file `src/literature.bib`.
@@ -170,8 +171,8 @@ Replace `path` with the path to the code files you want to include relative to t
 - If you want to read more about how to customize code listings I recommend reading this [guide](https://www.overleaf.com/learn/latex/Code_listing).
 ```latex
 % Include files
-\lstinputlisting[style=cvs, caption=Some test, label=list:test]{path/fileName} % c code in Visualstudio look
-\lstinputlisting[style=vhdl, caption=Some test, label=list:test]{VHDL/VHDL-Beschreibung.vhdl}
+\lstinputlisting[style=cvs, caption=Some test, label=lst:test]{path/fileName} % c code in Visualstudio look
+\lstinputlisting[style=vhdl, caption=Some test, label=lst:test]{VHDL/VHDL-Beschreibung.vhdl}
 
 %  Include code directly
 \begin{lstlisting}[style=vhdl, caption=Some test, label=test]
