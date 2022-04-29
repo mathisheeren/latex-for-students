@@ -72,7 +72,7 @@ $ u_{M} = u_{R_M} + u_{q} $
 \end{align}
 ```
 
-### Listings
+### List
 For **Unordered lists** use `\begin{itemize}` and `\end{itemize}`.  
 For **Ordered lists** use `\begin{enumerate}` and `\end{enumerate}`.  
 For lists **without spacing** between entries use `[noitemsep]` e.g. `\begin{itemize}[noitemsep]` and `\end{itemize}`.  
@@ -91,6 +91,16 @@ Listing with specific characters:
     \item[*)] One more bullet point
     \item[?)] Bullet point three
 \end{itemize}
+```
+
+### Links
+External links can be created as follows.
+```latex
+% hide url behind custom text
+\href{https://github.com/mathisheeren/latex-for-students}{Displayed text in the document} \\
+
+% show url in the document
+\url{https://github.com/mathisheeren/latex-for-students}
 ```
 
 ### Split latex code into multiple files
