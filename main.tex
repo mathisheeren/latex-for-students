@@ -1,25 +1,27 @@
 \documentclass[
     a4paper,             % Paper sizes DIN A4
     12pt,                % Font size
-    headheight=34pt,     % Padding top 
-    parskip,             % Paragraphs without indent  
+    headheight=1024pt,   % Padding top
+    parskip,             % Paragraphs without indent
     bibliography=totoc,  % Add the bibliography to the table of contents (Literaturverzeichnis)
-    index=totoc,         % Add the Index to the table of contents (Inhaltsverzeichnis)     
+    index=totoc,         % Add the Index to the table of contents (Inhaltsverzeichnis)
     listof=totoc,        % Add the list of tables and the list of figures to the table of contents (Tabellen- und Abbildungsverzeichnis)
     %draft,              % Show where the overfull box occurred
     ]{scrartcl}          % Koma-Script article class
-    
+
+\usepackage{scrhack}                       % fix outdated float pacage
+
 \usepackage[left=20mm,top=22mm,right=20mm,bottom=20mm]{geometry} % Side frame
 
 \usepackage[headsepline]{scrlayer-scrpage} % Set headers and footers
                                            % - "headsepline" activates the line under the header
 
-% Includes                                           
+% Includes
 \usepackage{subfiles}                      % Include sub text files
 \usepackage{pdfpages}                      % Enables embedding of PDFs
 \usepackage{rotating}                      % Libary to rotate figures
 \usepackage{tcolorbox}                     % Add colord boxes
-\usepackage{pgfgantt}                      % Add gantt charts 
+\usepackage{pgfgantt}                      % Add gantt charts
 
 % Font and characters
 \usepackage{ucs}                           % Charset
@@ -37,23 +39,21 @@
 
 \usepackage{siunitx}                       % Set numbers and units using new commands
 
-\usepackage{easyReview}                    % Commands to mark text improvement suggestions
-
 \usepackage{enumitem}					   % variable padding
 
 % Table and figure formatting
-\usepackage{float}                         % Placing graphics and tables with the [H] option 
+\usepackage{float}                         % Placing graphics and tables with the [H] option
 \usepackage{adjustbox}                     % Fit tables to page width
 \usepackage{colortbl}                      % Colorize tables
 \usepackage{multirow}                      % Connect rows in a table
 \usepackage{graphicx}                      % To insert graphics
-\graphicspath{ {./src/img/} }              % Graphix path relative to the main .tex file 
+\graphicspath{ {./src/img/} }              % Graphix path relative to the main .tex file
 
 \usepackage[
     colorlinks=true,                       % Customise link colours
-    urlcolor=blue,                         % Urls colored blue    
+    urlcolor=blue,                         % Urls colored blue
     linkcolor=black,                       % Internal links colored black
-    citecolor=black,                       % Cites colored black            
+    citecolor=black,                       % Cites colored black
     ]{hyperref}                            % Use links in the document
 \usepackage[all]{hypcap}                   % link to the top of figures
 
@@ -71,8 +71,8 @@
 %% Document style %%
 %%%%%%%%%%%%%%%%%%%%
 %% Choose your template %%
-\input{tex/templates/titlePageReport.tex} % Sub file provieds title page template 
-\input{tex/templates/closingPage.tex}     % Sub file provieds closing page template 
+\input{tex/templates/titlePageReport.tex} % Sub file provieds title page template
+\input{tex/templates/closingPage.tex}     % Sub file provieds closing page template
 
 %% Definitions %%
 
@@ -83,29 +83,29 @@
 % Header configuration
 \ihead{\today}                             % Left header, current date
 \chead{\mainTitle}                         % Center header, places main title
-\ohead{\includegraphics[scale=2]{\logo}}   % Right header, includes the logo 
+\ohead{\includegraphics[scale=2]{\logo}}   % Right header, includes the logo
 
 % Footer configuration
 \ifoot{\name}                              % Left footer, auther
 %\cfoot{}                                  % Center footer, not used
-\ofoot{\pagemark}                          % Right footer, Page numbering 
+\ofoot{\pagemark}                          % Right footer, Page numbering
 
 
 %%%%%%%%%%%%%%%%%%%%%%
 %% Document content %%
 %%%%%%%%%%%%%%%%%%%%%%
-\begin{document}    
-    
+\begin{document}
+
     \begin{noPageNumber}                   % Give title page no page number
         \titlePage                         % Create title page
     \end{noPageNumber}
-    
+
     \begin{noPageNumber}                   % Give table of contents page no page number
         \tableofcontents                   % Create table of contents
     \end{noPageNumber}
-    
+
     \subfile{tex/part1.tex}                % Open this file and put your content in it
-    
+
     \closingPage                           % Create closing page
-    
+
 \end{document}
